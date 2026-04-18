@@ -153,30 +153,30 @@
     </section>
 
     <!-- === SECCIÓN C: ACCESOS DIRECTOS A SERVICIOS === -->
-    <section class="section">
+    <section class="section section--gob-bg">
       <div class="container">
         <div class="servicios-grid">
-          <a href="tramites.html" class="servicio-card" data-reveal>
+          <a href="tramites.html" class="servicio-card servicio-card--primary" data-reveal>
             <div class="servicio-card__icon" aria-hidden="true">&#x1F4CB;</div>
             <span class="servicio-card__title">Trámites en Línea</span>
           </a>
-          <a href="gobierno.html" class="servicio-card" data-reveal>
+          <a href="gobierno.html" class="servicio-card servicio-card--blue" data-reveal>
             <div class="servicio-card__icon" aria-hidden="true">&#x1F3DB;</div>
             <span class="servicio-card__title">Gobierno Municipal</span>
           </a>
-          <a href="transparencia.html" class="servicio-card" data-reveal>
+          <a href="transparencia.html" class="servicio-card servicio-card--green" data-reveal>
             <div class="servicio-card__icon" aria-hidden="true">&#x1F4CA;</div>
             <span class="servicio-card__title">Transparencia</span>
           </a>
-          <a href="#turismo" class="servicio-card" data-reveal>
+          <a href="#turismo" class="servicio-card servicio-card--gold" data-reveal>
             <div class="servicio-card__icon" aria-hidden="true">&#x1F304;</div>
             <span class="servicio-card__title">Turismo</span>
           </a>
-          <a href="noticias.html" class="servicio-card" data-reveal>
+          <a href="noticias.html" class="servicio-card servicio-card--primary" data-reveal>
             <div class="servicio-card__icon" aria-hidden="true">&#x1F4F0;</div>
             <span class="servicio-card__title">Sala de Prensa</span>
           </a>
-          <a href="#contacto" class="servicio-card" data-reveal>
+          <a href="#contacto" class="servicio-card servicio-card--blue" data-reveal>
             <div class="servicio-card__icon" aria-hidden="true">&#x1F4DE;</div>
             <span class="servicio-card__title">Directorio y Contacto</span>
           </a>
@@ -185,7 +185,7 @@
     </section>
 
     <!-- === SECCIÓN D: NOTICIAS Y COMUNICADOS === -->
-    <section class="section" style="background-color: var(--gob-bg);">
+    <section class="section">
       <div class="container">
         <div class="noticias-home__header">
           <div>
@@ -248,8 +248,45 @@
     </section>
 
     <!-- === SECCIÓN E: SOBRE EL MUNICIPIO === -->
-    <section class="section" id="municipio">
+    <section class="section section--municipio-bg" id="municipio">
       <div class="container">
+
+        <!-- Timeline de hitos históricos -->
+        <div class="timeline" data-reveal>
+          <div class="timeline__track">
+            <div class="timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <span class="timeline__year">1627</span>
+              <span class="timeline__event">Fundación<br>como misión jesuita</span>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <span class="timeline__year">1678</span>
+              <span class="timeline__event">Cabecera<br>de Rectorado</span>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <span class="timeline__year">1913</span>
+              <span class="timeline__event">Escenario de la<br>Revolución Mexicana</span>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <span class="timeline__year">1932</span>
+              <span class="timeline__event">Municipio<br>independiente</span>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <span class="timeline__year">1994</span>
+              <span class="timeline__event">Llega la<br>carretera pavimentada</span>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <span class="timeline__year">2010</span>
+              <span class="timeline__event">Cerro de las Conchas:<br>Área Natural Protegida</span>
+            </div>
+          </div>
+        </div>
+
         <div class="municipio__grid">
           <!-- Izquierda: contenido editorial -->
           <div data-reveal>
@@ -316,7 +353,6 @@
           <article class="turismo-card" data-reveal>
             <div class="turismo-card__image turismo-card__image--1">
               <span class="turismo-card__badge badge badge--hybrid">Ícono Municipal</span>
-              Imagen próximamente
             </div>
             <div class="turismo-card__body">
               <h3 class="turismo-card__title">Kiosco Morisco</h3>
@@ -333,7 +369,6 @@
           <article class="turismo-card" data-reveal>
             <div class="turismo-card__image turismo-card__image--2">
               <span class="turismo-card__badge badge badge--online">Área Natural Protegida</span>
-              Imagen próximamente
             </div>
             <div class="turismo-card__body">
               <h3 class="turismo-card__title">Cerro de las Conchas</h3>
@@ -349,7 +384,6 @@
           <article class="turismo-card" data-reveal>
             <div class="turismo-card__image turismo-card__image--3">
               <span class="turismo-card__badge badge badge--presencial">Patrimonio Religioso</span>
-              Imagen próximamente
             </div>
             <div class="turismo-card__body">
               <h3 class="turismo-card__title">Templo de Santa Rosalía</h3>
@@ -365,7 +399,6 @@
           <article class="turismo-card" data-reveal>
             <div class="turismo-card__image turismo-card__image--4">
               <span class="turismo-card__badge badge badge--online">Naturaleza</span>
-              Imagen próximamente
             </div>
             <div class="turismo-card__body">
               <h3 class="turismo-card__title">Río Sahuaripa</h3>
@@ -440,7 +473,7 @@
     </section>
 
     <!-- === SECCIÓN H: GALERÍA === -->
-    <section class="section" id="galeria" style="background-color: var(--gob-bg);">
+    <section class="section section--gold-bg" id="galeria">
       <div class="container">
         <div class="section__header section__header--center" data-reveal>
           <span class="section__tag">Imágenes</span>
@@ -449,40 +482,30 @@
         </div>
 
         <div class="galeria-grid">
-          <div class="galeria-item galeria-item--wide" data-reveal>
+          <div class="galeria-item galeria-item--wide galeria-item--1" data-reveal>
             <span class="galeria-item__title">Kiosco Morisco</span>
-            <span class="galeria-item__placeholder">Imagen próximamente</span>
           </div>
-          <div class="galeria-item" data-reveal>
+          <div class="galeria-item galeria-item--2" data-reveal>
             <span class="galeria-item__title">Templo de Santa Rosalía</span>
-            <span class="galeria-item__placeholder">Imagen próximamente</span>
           </div>
-          <div class="galeria-item" data-reveal>
+          <div class="galeria-item galeria-item--3" data-reveal>
             <span class="galeria-item__title">Sierra y paisaje</span>
-            <span class="galeria-item__placeholder">Imagen próximamente</span>
           </div>
-          <div class="galeria-item" data-reveal>
+          <div class="galeria-item galeria-item--4" data-reveal>
             <span class="galeria-item__title">Río Sahuaripa</span>
-            <span class="galeria-item__placeholder">Imagen próximamente</span>
           </div>
-          <div class="galeria-item galeria-item--wide" data-reveal>
+          <div class="galeria-item galeria-item--wide galeria-item--5" data-reveal>
             <span class="galeria-item__title">Vista panorámica</span>
-            <span class="galeria-item__placeholder">Imagen próximamente</span>
           </div>
-          <div class="galeria-item" data-reveal>
+          <div class="galeria-item galeria-item--6" data-reveal>
             <span class="galeria-item__title">Fiestas patronales</span>
-            <span class="galeria-item__placeholder">Imagen próximamente</span>
           </div>
         </div>
-
-        <p class="galeria__nota" data-reveal>
-          &#x1F4F8; ¿Tienes fotografías de Arivechi? Compártelas con el Ayuntamiento para incluirlas en esta galería.
-        </p>
       </div>
     </section>
 
     <!-- === SECCIÓN I: CONTACTO === -->
-    <section class="section" id="contacto">
+    <section class="section section--gob-bg" id="contacto">
       <div class="container">
         <div class="section__header section__header--center" data-reveal>
           <span class="section__tag">Comunícate</span>

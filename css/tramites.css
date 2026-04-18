@@ -5,7 +5,17 @@
 
 /* === HERO === */
 .page-hero--tramites {
-  background: linear-gradient(135deg, var(--gob-primary) 0%, var(--gob-gold) 100%);
+  background-color: #0a2a3d;
+  background-image:
+    linear-gradient(135deg, rgba(12, 74, 110, 0.82) 0%, rgba(107, 22, 41, 0.75) 100%),
+    url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+.page-hero--tramites .page-hero__title,
+.page-hero--tramites .page-hero__subtitle {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 /* === CATÁLOGO DE TRÁMITES === */
@@ -38,7 +48,13 @@
   transition: all 0.3s var(--ease);
   position: relative;
   border-top: 3px solid var(--gob-primary);
+  border-left: 3px solid transparent;
 }
+
+.tramite-card--online      { border-left-color: var(--badge-online); }
+.tramite-card--hybrid      { border-left-color: var(--badge-hybrid); }
+.tramite-card--presencial  { border-left-color: var(--badge-presencial); }
+.tramite-card--soon        { border-left-color: var(--badge-proximamente); }
 
 .tramite-card:hover {
   box-shadow: var(--shadow-md);
@@ -89,6 +105,8 @@
 
 .tramite-card__badge {
   margin-top: 0.4rem;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.9rem;
 }
 
 /* === SECCIÓN DE FORMULARIO === */

@@ -6,26 +6,46 @@
 /* === HERO PRINCIPAL === */
 .hero {
   position: relative;
-  min-height: 450px;
+  min-height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, var(--gob-primary) 0%, var(--gob-blue) 100%);
   color: #fff;
   overflow: hidden;
   padding: var(--sp-xl) 0 var(--sp-lg);
+  background-color: #2a0a14;
+  background-image: url('https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?w=1920&q=80&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  will-change: opacity;
 }
 
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
+  background:
+    linear-gradient(135deg, rgba(107, 22, 41, 0.75) 0%, rgba(12, 74, 110, 0.65) 100%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    background-attachment: scroll;
+  }
 }
 
 .hero__content {
@@ -50,6 +70,12 @@
   color: #fff;
   margin-bottom: var(--sp-xs);
   animation: fadeInUp 0.6s var(--ease-expo) 0.1s both;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero__subtitle,
+.hero__stat-label {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero__subtitle {
@@ -167,18 +193,45 @@
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   text-decoration: none;
-  transition: all 0.3s var(--ease);
+  transition: all 0.35s var(--ease);
+  border-top: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.servicio-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, currentColor 130%);
+  color: var(--gob-primary-bg);
 }
 
 .servicio-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.servicio-card:hover::before {
+  opacity: 0.25;
 }
 
 .servicio-card:hover .servicio-card__icon {
-  color: var(--gob-gold);
-  background-color: var(--gob-gold-bg);
+  transform: scale(1.08);
 }
+
+.servicio-card--primary    { background: linear-gradient(180deg, #fff 55%, var(--gob-primary-bg) 100%); border-top-color: var(--gob-primary); }
+.servicio-card--blue       { background: linear-gradient(180deg, #fff 55%, var(--gob-blue-bg) 100%);    border-top-color: var(--gob-blue); }
+.servicio-card--green      { background: linear-gradient(180deg, #fff 55%, var(--gob-green-bg) 100%);   border-top-color: var(--gob-green); }
+.servicio-card--gold       { background: linear-gradient(180deg, #fff 55%, var(--gob-gold-bg) 100%);    border-top-color: var(--gob-gold); }
+
+.servicio-card--primary .servicio-card__icon { background-color: var(--gob-primary-bg); color: var(--gob-primary); }
+.servicio-card--blue    .servicio-card__icon { background-color: var(--gob-blue-bg);    color: var(--gob-blue); }
+.servicio-card--green   .servicio-card__icon { background-color: var(--gob-green-bg);   color: var(--gob-green); }
+.servicio-card--gold    .servicio-card__icon { background-color: var(--gob-gold-bg);    color: var(--gob-gold); }
 
 .servicio-card__icon {
   display: flex;
@@ -311,6 +364,109 @@
   color: var(--gob-primary-light);
 }
 
+/* === SECCIONES CON FONDO === */
+.section--gob-bg       { background-color: var(--gob-bg); }
+.section--gold-bg      { background-color: var(--gob-gold-bg); }
+.section--municipio-bg {
+  background: linear-gradient(180deg, var(--gob-primary-bg) 0%, #fff 70%);
+}
+
+/* === TIMELINE HISTORIA === */
+.timeline {
+  margin: var(--sp-lg) 0 0;
+  padding: var(--sp-md) 0 var(--sp-sm);
+  position: relative;
+}
+
+.timeline__track {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--sp-xs);
+  position: relative;
+}
+
+.timeline__track::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gob-gold) 0%, var(--gob-primary) 50%, var(--gob-gold) 100%);
+  border-radius: 2px;
+}
+
+.timeline__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.4rem;
+}
+
+.timeline__dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--gob-gold);
+  box-shadow: 0 0 0 4px var(--gob-gold-bg);
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.25s var(--ease);
+}
+
+.timeline__item:hover .timeline__dot {
+  transform: scale(1.15);
+  border-color: var(--gob-primary);
+}
+
+.timeline__year {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gob-primary);
+  line-height: 1.1;
+}
+
+.timeline__event {
+  font-size: 0.78rem;
+  color: var(--gob-text-secondary);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .timeline__track {
+    grid-template-columns: 1fr;
+    gap: var(--sp-xs);
+  }
+
+  .timeline__track::before {
+    top: 0;
+    bottom: 0;
+    left: 14px;
+    right: auto;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg, var(--gob-gold) 0%, var(--gob-primary) 100%);
+  }
+
+  .timeline__item {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: var(--sp-sm);
+    padding: 0.25rem 0;
+  }
+
+  .timeline__dot {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+}
+
 /* === SOBRE EL MUNICIPIO === */
 .municipio__grid {
   display: grid;
@@ -407,15 +563,31 @@
   font-weight: 500;
 }
 
-.turismo-card__image--1 { background: linear-gradient(135deg, #6B1629, #B8860B); }
-.turismo-card__image--2 { background: linear-gradient(135deg, #1B6B3A, #0C4A6E); }
-.turismo-card__image--3 { background: linear-gradient(135deg, #8C2038, #6B1629); }
-.turismo-card__image--4 { background: linear-gradient(135deg, #0C4A6E, #1B6B3A); }
+.turismo-card__image {
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+}
+
+.turismo-card__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.5) 100%);
+  pointer-events: none;
+}
+
+.turismo-card__image--1 { background-image: url('https://images.unsplash.com/photo-1564502230329-ec55ec8d03f8?w=1200&q=80&auto=format&fit=crop'); }
+.turismo-card__image--2 { background-image: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80&auto=format&fit=crop'); }
+.turismo-card__image--3 { background-image: url('https://images.unsplash.com/photo-1520637836862-4d197d17c55a?w=1200&q=80&auto=format&fit=crop'); }
+.turismo-card__image--4 { background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&auto=format&fit=crop'); }
 
 .turismo-card__badge {
   position: absolute;
   top: var(--sp-sm);
   left: var(--sp-sm);
+  z-index: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
 .turismo-card__body {
@@ -515,43 +687,54 @@
 }
 
 .galeria-item {
-  min-height: 200px;
+  position: relative;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--gob-bg);
-  border: 2px dashed var(--gob-border);
+  justify-content: flex-end;
   border-radius: var(--radius-lg);
   padding: var(--sp-md);
-  text-align: center;
-  transition: all 0.3s var(--ease);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+  background-color: var(--gob-primary);
+  background-size: cover;
+  background-position: center;
+}
+
+.galeria-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0.8) 100%);
+  pointer-events: none;
+  transition: background 0.3s var(--ease);
 }
 
 .galeria-item:hover {
-  border-color: var(--gob-gold);
-  background-color: var(--gob-gold-bg);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
+
+.galeria-item:hover::after {
+  background: linear-gradient(180deg, rgba(107,22,41,0.15) 0%, rgba(107,22,41,0.7) 75%, rgba(0,0,0,0.85) 100%);
+}
+
+.galeria-item--1 { background-image: url('https://images.unsplash.com/photo-1564502230329-ec55ec8d03f8?w=1400&q=80&auto=format&fit=crop'); }
+.galeria-item--2 { background-image: url('https://images.unsplash.com/photo-1520637836862-4d197d17c55a?w=1200&q=80&auto=format&fit=crop'); }
+.galeria-item--3 { background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80&auto=format&fit=crop'); }
+.galeria-item--4 { background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&auto=format&fit=crop'); }
+.galeria-item--5 { background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1400&q=80&auto=format&fit=crop'); }
+.galeria-item--6 { background-image: url('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1200&q=80&auto=format&fit=crop'); }
 
 .galeria-item__title {
+  position: relative;
+  z-index: 1;
   font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--gob-text);
-  margin-bottom: 0.25rem;
-}
-
-.galeria-item__placeholder {
-  font-size: 0.82rem;
-  color: var(--gob-text-muted);
-}
-
-.galeria__nota {
-  text-align: center;
-  font-style: italic;
-  font-size: 0.88rem;
-  color: var(--gob-text-secondary);
-  margin-top: var(--sp-md);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* === CONTACTO === */

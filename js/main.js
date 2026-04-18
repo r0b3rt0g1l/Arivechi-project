@@ -6,6 +6,44 @@
 (function () {
   'use strict';
 
+  /* === HERO PARALLAX FADE === */
+  function initHeroParallax() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    const content = hero.querySelector('.hero__content');
+    const scrollIndicator = hero.querySelector('.hero__scroll');
+    let ticking = false;
+
+    function update() {
+      const rect = hero.getBoundingClientRect();
+      const heroHeight = hero.offsetHeight;
+      const scrolled = Math.max(0, -rect.top);
+      const progress = Math.min(1, scrolled / heroHeight);
+      const opacity = Math.max(0, 1 - progress * 1.4);
+      const translate = scrolled * 0.35;
+
+      hero.style.opacity = opacity;
+      if (content) {
+        content.style.transform = 'translateY(' + translate + 'px)';
+      }
+      if (scrollIndicator) {
+        scrollIndicator.style.opacity = Math.max(0, 1 - progress * 3);
+      }
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+  }
+
   /* === STICKY NAVBAR === */
   function initStickyNav() {
     const navbar = document.querySelector('.navbar');
@@ -321,6 +359,7 @@
 
   /* === INICIALIZACIÓN === */
   document.addEventListener('DOMContentLoaded', function () {
+    initHeroParallax();
     initStickyNav();
     initMobileMenu();
     initDropdown();
