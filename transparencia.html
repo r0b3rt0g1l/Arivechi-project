@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Transparencia | H. Ayuntamiento de Arivechi</title>
+  <meta name="description" content="Portal de Transparencia del municipio de Arivechi, Sonora. Acceso a información pública, obligaciones de transparencia, directorio de servidores públicos y rendición de cuentas.">
+  <meta name="keywords" content="transparencia, información pública, rendición de cuentas, Arivechi, Sonora, ARCO">
+  <meta property="og:title" content="Portal de Transparencia | H. Ayuntamiento de Arivechi">
+  <meta property="og:description" content="Portal de Transparencia del municipio de Arivechi, Sonora. Acceso a información pública y rendición de cuentas.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/globals.css">
+  <link rel="stylesheet" href="css/nav-footer.css">
+  <link rel="stylesheet" href="css/transparencia.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/transparencia.js" defer></script>
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+  <!-- === TOPBAR === -->
+  <div class="topbar">
+    <div class="container">
+      <span class="topbar__left">Gobierno Municipal de Arivechi, Sonora</span>
+      <nav class="topbar__right" aria-label="Enlaces rápidos">
+        <a href="transparencia.html" class="topbar__link">Transparencia</a>
+        <span class="topbar__sep">|</span>
+        <a href="noticias.html" class="topbar__link">Sala de Prensa</a>
+        <span class="topbar__sep">|</span>
+        <a href="index.html#contacto" class="topbar__link">Contacto</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- === NAVBAR === -->
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="container">
+      <a href="index.html" class="navbar__brand">
+        <span class="navbar__brand-icon" aria-hidden="true">&#x25C8;</span>
+        <span class="navbar__brand-text">H. Ayuntamiento de Arivechi<small>Sonora, México</small></span>
+      </a>
+
+      <ul class="navbar__menu">
+        <li><a href="index.html" class="navbar__link">Inicio</a></li>
+        <li class="navbar__dropdown">
+          <a href="gobierno.html" class="navbar__link navbar__dropdown-toggle">
+            Gobierno
+            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="gobierno.html#estructura" class="navbar__dropdown-item">Estructura Orgánica</a>
+            <a href="gobierno.html#directorio" class="navbar__dropdown-item">Directorio</a>
+            <a href="gobierno.html#plan" class="navbar__dropdown-item">Plan Municipal</a>
+          </div>
+        </li>
+        <li><a href="tramites.html" class="navbar__link">Trámites</a></li>
+        <li><a href="transparencia.html" class="navbar__link">Transparencia</a></li>
+        <li><a href="index.html#turismo" class="navbar__link">Turismo</a></li>
+        <li><a href="noticias.html" class="navbar__link">Noticias</a></li>
+        <li><a href="index.html#contacto" class="navbar__link">Contacto</a></li>
+      </ul>
+
+      <button class="navbar__hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+  <div class="navbar-spacer"></div>
+
+  <!-- === MENÚ MÓVIL === -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__overlay"></div>
+    <div class="mobile-menu__panel">
+      <div class="mobile-menu__header">
+        <span class="mobile-menu__brand">Menú</span>
+        <button class="mobile-menu__close" aria-label="Cerrar menú">&times;</button>
+      </div>
+      <nav class="mobile-menu__nav" aria-label="Navegación móvil">
+        <a href="index.html" class="mobile-menu__link">Inicio</a>
+        <button class="mobile-menu__link mobile-menu__submenu-toggle" aria-expanded="false">
+          Gobierno
+          <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+        <div class="mobile-menu__submenu">
+          <a href="gobierno.html#estructura" class="mobile-menu__submenu-link">Estructura Orgánica</a>
+          <a href="gobierno.html#directorio" class="mobile-menu__submenu-link">Directorio</a>
+          <a href="gobierno.html#plan" class="mobile-menu__submenu-link">Plan Municipal</a>
+        </div>
+        <a href="tramites.html" class="mobile-menu__link">Trámites</a>
+        <a href="transparencia.html" class="mobile-menu__link">Transparencia</a>
+        <a href="index.html#turismo" class="mobile-menu__link">Turismo</a>
+        <a href="noticias.html" class="mobile-menu__link">Noticias</a>
+        <a href="index.html#contacto" class="mobile-menu__link">Contacto</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- === LO MÁS BUSCADO === -->
+  <div class="lo-mas-buscado">
+    <div class="container">
+      <span class="lo-mas-buscado__label">Lo más buscado:</span>
+      <div class="lo-mas-buscado__list">
+        <a href="tramites.html" class="lo-mas-buscado__link">Constancia de Residencia</a>
+        <a href="tramites.html" class="lo-mas-buscado__link">Pago de Predial</a>
+        <a href="tramites.html" class="lo-mas-buscado__link">Reporte Ciudadano</a>
+        <a href="transparencia.html" class="lo-mas-buscado__link">Transparencia</a>
+        <a href="gobierno.html#directorio" class="lo-mas-buscado__link">Directorio</a>
+        <a href="index.html#contacto" class="lo-mas-buscado__link">¿Cómo llegar?</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- === CONTENIDO PRINCIPAL === -->
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="page-hero page-hero--transparencia">
+      <div class="container">
+        <nav class="page-hero__breadcrumb" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span>/</span>
+          <span>Transparencia</span>
+        </nav>
+        <h1 class="page-hero__title">Portal de Transparencia</h1>
+        <p class="page-hero__subtitle">Comprometidos con la rendición de cuentas y el derecho de acceso a la información pública.</p>
+      </div>
+    </section>
+
+    <!-- Marco Legal + Búsqueda + Acordeones -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Marco Legal -->
+        <div class="marco-legal" data-reveal>
+          El H. Ayuntamiento de Arivechi, en cumplimiento con la Ley General de Transparencia y Acceso a la
+          Información Pública y el Artículo 6° de la Constitución Política de los Estados Unidos Mexicanos,
+          pone a disposición de la ciudadanía la siguiente información sobre la gestión municipal y el ejercicio
+          de los recursos públicos.
+        </div>
+
+        <!-- Búsqueda -->
+        <div class="transparencia-busqueda" data-reveal>
+          <div class="transparencia-busqueda__bar">
+            <input type="search" id="transparencia-search" class="transparencia-busqueda__input"
+              placeholder="Buscar en obligaciones de transparencia..." aria-label="Buscar en transparencia">
+            <button class="transparencia-busqueda__btn" type="button" aria-label="Buscar">Buscar</button>
+          </div>
+        </div>
+
+        <!-- Acordeones -->
+        <div class="acordeon" data-reveal>
+
+          <!-- 01 Estructura Orgánica -->
+          <div class="acordeon__item">
+            <button class="acordeon__header" aria-expanded="false" aria-controls="acordeon-1">
+              <span class="acordeon__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg>
+              </span>
+              <span class="acordeon__number">01</span>
+              <span class="acordeon__title">Estructura Orgánica</span>
+            </button>
+            <div class="acordeon__body" id="acordeon-1" role="region">
+              <div class="acordeon__content">
+                <p>
+                  El H. Ayuntamiento de Arivechi está integrado por: Presidente Municipal, Síndico Municipal,
+                  3 Regidores de Mayoría Relativa y 2 Regidores de Representación Proporcional, conforme al
+                  Artículo 115 constitucional y la Ley de Gobierno y Administración Municipal del Estado de Sonora.
+                </p>
+                <p><em>Información en proceso de actualización para el periodo de gobierno vigente.</em></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 02 Marco Normativo -->
+          <div class="acordeon__item">
+            <button class="acordeon__header" aria-expanded="false" aria-controls="acordeon-2">
+              <span class="acordeon__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg>
+              </span>
+              <span class="acordeon__number">02</span>
+              <span class="acordeon__title">Marco Normativo</span>
+            </button>
+            <div class="acordeon__body" id="acordeon-2" role="region">
+              <div class="acordeon__content">
+                <ul>
+                  <li>Bando de Policía y Gobierno Municipal de Arivechi</li>
+                  <li>Reglamentos municipales vigentes</li>
+                  <li>Ley de Gobierno y Administración Municipal del Estado de Sonora</li>
+                  <li>Constitución Política de los Estados Unidos Mexicanos</li>
+                </ul>
+                <p><em>Documentos en proceso de digitalización.</em></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 Directorio de Servidores Públicos -->
+          <div class="acordeon__item">
+            <button class="acordeon__header" aria-expanded="false" aria-controls="acordeon-3">
+              <span class="acordeon__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg>
+              </span>
+              <span class="acordeon__number">03</span>
+              <span class="acordeon__title">Directorio de Servidores Públicos</span>
+            </button>
+            <div class="acordeon__body" id="acordeon-3" role="region">
+              <div class="acordeon__content">
+                <table class="acordeon__table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Cargo</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Área</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Presidente Municipal</td><td>(Por confirmar)</td><td>Presidencia</td></tr>
+                    <tr><td>Síndico Municipal</td><td>(Por confirmar)</td><td>Sindicatura</td></tr>
+                    <tr><td>Regidor 1</td><td>(Por confirmar)</td><td>Cabildo</td></tr>
+                    <tr><td>Regidor 2</td><td>(Por confirmar)</td><td>Cabildo</td></tr>
+                    <tr><td>Regidor 3</td><td>(Por confirmar)</td><td>Cabildo</td></tr>
+                  </tbody>
+                </table>
+                <p><em>Directorio sujeto a actualización.</em></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 Presupuesto de Egresos -->
+          <div class="acordeon__item">
+            <button class="acordeon__header" aria-expanded="false" aria-controls="acordeon-4">
+              <span class="acordeon__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg>
+              </span>
+              <span class="acordeon__number">04</span>
+              <span class="acordeon__title">Presupuesto de Egresos</span>
+            </button>
+            <div class="acordeon__body" id="acordeon-4" role="region">
+              <div class="acordeon__content">
+                <p>
+                  Presupuesto de egresos del ejercicio fiscal 2026 en proceso de publicación.
+                  Consulte próximamente en esta sección.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05 Cuenta Pública -->
+          <div class="acordeon__item">
+            <button class="acordeon__header" aria-expanded="false" aria-controls="acordeon-5">
+              <span class="acordeon__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg>
+              </span>
+              <span class="acordeon__number">05</span>
+              <span class="acordeon__title">Cuenta Pública</span>
+            </button>
+            <div class="acordeon__body" id="acordeon-5" role="region">
+              <div class="acordeon__content">
+                <p>
+                  Informes trimestrales y anuales del municipio. Documentos en proceso de auditoría y publicación.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 06 Programas Sociales -->
+          <div class="acordeon__item">
+            <button class="acordeon__header" aria-expanded="false" aria-controls="acordeon-6">
+              <span class="acordeon__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg>
+              </span>
+              <span class="acordeon__number">06</span>
+              <span class="acordeon__title">Programas Sociales</span>
+            </button>
+            <div class="acordeon__body" id="acordeon-6" role="region">
+              <div class="acordeon__content">
+                <ul>
+                  <li><strong>Programa de Apoyo Alimentario</strong> — Entrega de despensas a familias
+                    en situación de vulnerabilidad en la cabecera municipal y comunidades.</li>
+                  <li><strong>Programa de Mejoramiento de Vivienda</strong> — Apoyo con materiales de
+                    construcción para mejorar las condiciones de vivienda.</li>
+                  <li><strong>Programa de Becas Educativas</strong> — Estímulos económicos para
+                    estudiantes de nivel básico y medio superior del municipio.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 07 Sesiones de Cabildo -->
+          <div class="acordeon__item">
+            <button class="acordeon__header" aria-expanded="false" aria-controls="acordeon-7">
+              <span class="acordeon__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg>
+              </span>
+              <span class="acordeon__number">07</span>
+              <span class="acordeon__title">Sesiones de Cabildo</span>
+            </button>
+            <div class="acordeon__body" id="acordeon-7" role="region">
+              <div class="acordeon__content">
+                <p>
+                  Actas de sesiones ordinarias y extraordinarias del Cabildo Municipal.
+                  Calendario: primer lunes de cada mes. Actas en proceso de digitalización.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 08 Información Financiera -->
+          <div class="acordeon__item">
+            <button class="acordeon__header" aria-expanded="false" aria-controls="acordeon-8">
+              <span class="acordeon__icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M7 4l6 6-6 6"/></svg>
+              </span>
+              <span class="acordeon__number">08</span>
+              <span class="acordeon__title">Información Financiera</span>
+            </button>
+            <div class="acordeon__body" id="acordeon-8" role="region">
+              <div class="acordeon__content">
+                <p>
+                  Estados financieros, indicadores de deuda pública, tabulador de sueldos.
+                  Información en proceso de integración.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mensaje vacío de búsqueda -->
+        <div class="transparencia-busqueda__empty" hidden>
+          No se encontraron resultados. Puedes solicitar información a través del trámite de
+          <a href="tramites.html">Solicitud de Información Pública</a>.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- === AVISO DE PRIVACIDAD === -->
+    <section class="section" id="aviso-privacidad" style="background-color: var(--gob-bg);">
+      <div class="container">
+        <div class="aviso-privacidad" data-reveal>
+          <h2 class="aviso-privacidad__title">Aviso de Privacidad</h2>
+          <div class="aviso-privacidad__text">
+            <p>
+              <strong>Responsable:</strong> H. Ayuntamiento de Arivechi, Sonora.<br>
+              <strong>Domicilio:</strong> Plaza Principal S/N, Arivechi, Sonora, C.P. 85680.
+            </p>
+            <p>
+              El H. Ayuntamiento de Arivechi, como responsable del tratamiento de datos personales,
+              informa que los datos recabados a través de este portal son utilizados exclusivamente
+              para los fines de atención ciudadana, trámites municipales y comunicación institucional.
+            </p>
+            <p>
+              Para ejercer sus derechos ARCO (Acceso, Rectificación, Cancelación y Oposición),
+              puede dirigirse a la Unidad de Transparencia del municipio en las oficinas del Ayuntamiento.
+            </p>
+            <p>
+              <strong>Fundamento legal:</strong> Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- === FOOTER === -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <div class="footer__brand">
+            <span class="footer__brand-icon" aria-hidden="true">&#x25C8;</span>
+            <span class="footer__brand-text">H. Ayuntamiento de Arivechi</span>
+          </div>
+          <address class="footer__address">
+            Plaza Principal S/N, Arivechi, Sonora<br>
+            C.P. 85680, México
+          </address>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-title">Navegación</h3>
+          <a href="index.html" class="footer__link">Inicio</a>
+          <a href="gobierno.html" class="footer__link">Gobierno</a>
+          <a href="tramites.html" class="footer__link">Trámites y Servicios</a>
+          <a href="transparencia.html" class="footer__link">Transparencia</a>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-title">Información</h3>
+          <a href="index.html#turismo" class="footer__link">Turismo</a>
+          <a href="noticias.html" class="footer__link">Sala de Prensa</a>
+          <a href="transparencia.html#aviso-privacidad" class="footer__link">Aviso de Privacidad</a>
+        </div>
+        <div class="footer__col">
+          <h3 class="footer__col-title">Contacto</h3>
+          <p class="footer__text">
+            IV Distrito Electoral Federal (Guaymas)<br>
+            VII Distrito Electoral Estatal (Agua Prieta)
+          </p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 H. Ayuntamiento de Arivechi, Sonora &middot; Todos los derechos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

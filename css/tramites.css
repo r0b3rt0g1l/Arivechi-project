@@ -1,0 +1,285 @@
+/* ============================================================
+   TRAMITES.CSS — Estilos de la página de Trámites y Servicios
+   H. Ayuntamiento de Arivechi, Sonora
+   ============================================================ */
+
+/* === HERO === */
+.page-hero--tramites {
+  background: linear-gradient(135deg, var(--gob-primary) 0%, var(--gob-gold) 100%);
+}
+
+/* === CATÁLOGO DE TRÁMITES === */
+.tramites-catalogo {
+  background-color: var(--gob-bg-alt);
+}
+
+.tramites-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-sm);
+}
+
+@media (min-width: 768px) {
+  .tramites-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tramite-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--sp-md) var(--sp-sm);
+  background: var(--gob-bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+  position: relative;
+  border-top: 3px solid var(--gob-primary);
+}
+
+.tramite-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  color: inherit;
+}
+
+.tramite-card:hover .tramite-card__icon {
+  background-color: var(--gob-gold-bg);
+  color: var(--gob-gold);
+}
+
+.tramite-card--disabled {
+  border-top-color: var(--gob-border);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.tramite-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--gob-primary-bg);
+  color: var(--gob-primary);
+  font-size: 1.6rem;
+  margin-bottom: var(--sp-xs);
+  transition: all 0.3s var(--ease);
+}
+
+.tramite-card__title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  margin-bottom: 0.25rem;
+}
+
+.tramite-card__desc {
+  font-size: 0.82rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--sp-xs);
+  flex: 1;
+}
+
+.tramite-card__badge {
+  margin-top: 0.4rem;
+}
+
+/* === SECCIÓN DE FORMULARIO === */
+.tramite-seccion {
+  scroll-margin-top: var(--nav-height);
+}
+
+.tramite-seccion--alt {
+  background-color: var(--gob-bg-alt);
+}
+
+.tramite-seccion__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-lg);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .tramite-seccion__grid {
+    grid-template-columns: 1fr 1.4fr;
+  }
+}
+
+.tramite-info__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background-color: var(--gob-primary-bg);
+  color: var(--gob-primary);
+  border-radius: var(--radius-md);
+  font-size: 1.8rem;
+  margin-bottom: var(--sp-sm);
+}
+
+.tramite-info__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+  color: var(--gob-text);
+  margin-bottom: var(--sp-xs);
+}
+
+.tramite-info__desc {
+  font-size: 0.95rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--sp-sm);
+}
+
+.tramite-info__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: var(--sp-sm);
+  background-color: var(--gob-bg-white);
+  border-left: 3px solid var(--gob-gold);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: var(--gob-text-secondary);
+}
+
+.tramite-info__meta strong {
+  color: var(--gob-text);
+  font-weight: 600;
+}
+
+.tramite-info__requisitos {
+  margin-top: var(--sp-sm);
+}
+
+.tramite-info__requisitos-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gob-text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.tramite-info__requisitos-list {
+  list-style: disc inside;
+  font-size: 0.88rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.7;
+  padding-left: var(--sp-xs);
+}
+
+/* === FORMULARIO === */
+.tramite-form {
+  background: var(--gob-bg-white);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-md);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (min-width: 768px) {
+  .tramite-form {
+    padding: var(--sp-lg);
+  }
+}
+
+.tramite-form__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  margin-bottom: var(--sp-sm);
+  padding-bottom: var(--sp-xs);
+  border-bottom: 2px solid var(--gob-border-light);
+}
+
+.tramite-form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-sm);
+}
+
+@media (min-width: 600px) {
+  .tramite-form__row--2col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.tramite-form__note {
+  font-size: 0.82rem;
+  color: var(--gob-text-muted);
+  font-style: italic;
+  margin-top: var(--sp-sm);
+  line-height: 1.6;
+}
+
+.tramite-form__submit {
+  width: 100%;
+  margin-top: var(--sp-xs);
+}
+
+/* Bloque de éxito (replica patrón contact-success) */
+.tramite-success {
+  text-align: center;
+  padding: var(--sp-lg) var(--sp-md);
+  background: var(--gob-bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.tramite-success__icon {
+  font-size: 3rem;
+  color: var(--gob-success);
+  margin-bottom: var(--sp-sm);
+}
+
+.tramite-success__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  margin-bottom: 0.5rem;
+}
+
+.tramite-success__text {
+  font-size: 0.95rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.6;
+}
+
+.tramite-success__folio {
+  display: inline-block;
+  margin-top: var(--sp-sm);
+  padding: 0.4rem 1rem;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  color: var(--gob-primary);
+  background-color: var(--gob-primary-bg);
+  border-radius: var(--radius-sm);
+}
+
+/* === AVISO FINAL === */
+.tramites-aviso {
+  padding: var(--sp-md);
+  background-color: var(--gob-gold-bg);
+  border-left: 3px solid var(--gob-gold);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.7;
+}
+
+.tramites-aviso a {
+  color: var(--gob-primary);
+  font-weight: 600;
+}

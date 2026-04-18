@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sala de Prensa | H. Ayuntamiento de Arivechi</title>
+  <meta name="description" content="Noticias, comunicados de prensa y avisos del gobierno municipal de Arivechi, Sonora.">
+  <meta name="keywords" content="noticias, comunicados, sala de prensa, gobierno, Arivechi, Sonora">
+  <meta property="og:title" content="Sala de Prensa | H. Ayuntamiento de Arivechi">
+  <meta property="og:description" content="Noticias, comunicados de prensa y avisos del gobierno municipal de Arivechi, Sonora.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/globals.css">
+  <link rel="stylesheet" href="css/nav-footer.css">
+  <link rel="stylesheet" href="css/noticias.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
+
+  <!-- === TOPBAR === -->
+  <div class="topbar">
+    <div class="container">
+      <span class="topbar__left">Gobierno Municipal de Arivechi, Sonora</span>
+      <nav class="topbar__right" aria-label="Enlaces rápidos">
+        <a href="transparencia.html" class="topbar__link">Transparencia</a>
+        <span class="topbar__sep">|</span>
+        <a href="noticias.html" class="topbar__link">Sala de Prensa</a>
+        <span class="topbar__sep">|</span>
+        <a href="index.html#contacto" class="topbar__link">Contacto</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- === NAVBAR === -->
+  <nav class="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="container">
+      <a href="index.html" class="navbar__brand">
+        <span class="navbar__brand-icon" aria-hidden="true">&#x25C8;</span>
+        <span class="navbar__brand-text">H. Ayuntamiento de Arivechi<small>Sonora, México</small></span>
+      </a>
+
+      <ul class="navbar__menu">
+        <li><a href="index.html" class="navbar__link">Inicio</a></li>
+        <li class="navbar__dropdown">
+          <a href="gobierno.html" class="navbar__link navbar__dropdown-toggle">
+            Gobierno
+            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+          </a>
+          <div class="navbar__dropdown-menu">
+            <a href="gobierno.html#estructura" class="navbar__dropdown-item">Estructura Orgánica</a>
+            <a href="gobierno.html#directorio" class="navbar__dropdown-item">Directorio</a>
+            <a href="gobierno.html#plan" class="navbar__dropdown-item">Plan Municipal</a>
+          </div>
+        </li>
+        <li><a href="tramites.html" class="navbar__link">Trámites</a></li>
+        <li><a href="transparencia.html" class="navbar__link">Transparencia</a></li>
+        <li><a href="index.html#turismo" class="navbar__link">Turismo</a></li>
+        <li><a href="noticias.html" class="navbar__link">Noticias</a></li>
+        <li><a href="index.html#contacto" class="navbar__link">Contacto</a></li>
+      </ul>
+
+      <button class="navbar__hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+  <div class="navbar-spacer"></div>
+
+  <!-- === MENÚ MÓVIL === -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__overlay"></div>
+    <div class="mobile-menu__panel">
+      <div class="mobile-menu__header">
+        <span class="mobile-menu__brand">Menú</span>
+        <button class="mobile-menu__close" aria-label="Cerrar menú">&times;</button>
+      </div>
+      <nav class="mobile-menu__nav" aria-label="Navegación móvil">
+        <a href="index.html" class="mobile-menu__link">Inicio</a>
+        <button class="mobile-menu__link mobile-menu__submenu-toggle" aria-expanded="false">
+          Gobierno
+          <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </button>
+        <div class="mobile-menu__submenu">
+          <a href="gobierno.html#estructura" class="mobile-menu__submenu-link">Estructura Orgánica</a>
+          <a href="gobierno.html#directorio" class="mobile-menu__submenu-link">Directorio</a>
+          <a href="gobierno.html#plan" class="mobile-menu__submenu-link">Plan Municipal</a>
+        </div>
+        <a href="tramites.html" class="mobile-menu__link">Trámites</a>
+        <a href="transparencia.html" class="mobile-menu__link">Transparencia</a>
+        <a href="index.html#turismo" class="mobile-menu__link">Turismo</a>
+        <a href="noticias.html" class="mobile-menu__link">Noticias</a>
+        <a href="index.html#contacto" class="mobile-menu__link">Contacto</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- === LO MÁS BUSCADO === -->
+  <div class="lo-mas-buscado">
+    <div class="container">
+      <span class="lo-mas-buscado__label">Lo más buscado:</span>
+      <div class="lo-mas-buscado__list">
+        <a href="tramites.html" class="lo-mas-buscado__link">Constancia de Residencia</a>
+        <a href="tramites.html" class="lo-mas-buscado__link">Pago de Predial</a>
+        <a href="tramites.html" class="lo-mas-buscado__link">Reporte Ciudadano</a>
+        <a href="transparencia.html" class="lo-mas-buscado__link">Transparencia</a>
+        <a href="gobierno.html#directorio" class="lo-mas-buscado__link">Directorio</a>
+        <a href="index.html#contacto" class="lo-mas-buscado__link">¿Cómo llegar?</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- === CONTENIDO PRINCIPAL === -->
+  <main id="main-content">
+
+    <!-- Hero -->
+    <section class="page-hero page-hero--noticias">
+      <div class="container">
+        <nav class="page-hero__breadcrumb" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span>/</span>
+          <span>Sala de Prensa</span>
+        </nav>
+        <h1 class="page-hero__title">Sala de Prensa</h1>
+        <p class="page-hero__subtitle">Comunicados oficiales, noticias y avisos del gobierno municipal.</p>
+      </div>
+    </section>
+
+    <!-- Noticias -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Aviso -->
+        <div class="noticias-aviso" data-reveal>
+          <span class="noticias-aviso__icon" aria-hidden="true">&#8505;&#65039;</span>
+          <p class="noticias-aviso__text">
+            Esta sección se actualiza con los comunicados oficiales del H. Ayuntamiento.
+            Los contenidos mostrados actualmente son de ejemplo y serán reemplazados con información real.
+          </p>
+        </div>
+
+        <!-- Grid de noticias -->
+        <div class="noticias-grid">
+
+          <!-- Noticia 1 -->
+          <article class="noticia-card" data-reveal>
+            <div class="noticia-card__bar"></div>
+            <div class="noticia-card__body">
+              <div class="noticia-card__meta">
+                <span class="noticia-card__date">15 de marzo de 2026</span>
+                <span class="badge badge--presencial">Obras Públicas</span>
+              </div>
+              <h2 class="noticia-card__title">Gobierno municipal anuncia programa de mejora de caminos rurales</h2>
+              <p class="noticia-card__excerpt">
+                El H. Ayuntamiento de Arivechi presentó el programa de mejoramiento de caminos rurales que conectan
+                la cabecera municipal con las comunidades de Bámori y Tarachi, buscando mejorar la comunicación vial en el municipio.
+              </p>
+              <a href="#" class="noticia-card__link">Leer comunicado completo <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Noticia 2 -->
+          <article class="noticia-card" data-reveal>
+            <div class="noticia-card__bar"></div>
+            <div class="noticia-card__body">
+              <div class="noticia-card__meta">
+                <span class="noticia-card__date">10 de marzo de 2026</span>
+                <span class="badge badge--online">Cultura</span>
+              </div>
+              <h2 class="noticia-card__title">Invitación a las Fiestas de Santa Rosalía 2026</h2>
+              <p class="noticia-card__excerpt">
+                El gobierno municipal extiende la invitación a toda la ciudadanía a participar en las celebraciones
+                anuales en honor a Santa Rosalía, patrona de Arivechi, con actividades culturales, deportivas y religiosas.
+              </p>
+              <a href="#" class="noticia-card__link">Leer comunicado completo <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Noticia 3 -->
+          <article class="noticia-card" data-reveal>
+            <div class="noticia-card__bar"></div>
+            <div class="noticia-card__body">
+              <div class="noticia-card__meta">
+                <span class="noticia-card__date">5 de marzo de 2026</span>
+                <span class="badge badge--hybrid">Tesorería</span>
+              </div>
+              <h2 class="noticia-card__title">Actualización del padrón de contribuyentes del impuesto predial</h2>
+              <p class="noticia-card__excerpt">
+                La Tesorería Municipal informa que se encuentra en proceso de actualización el padrón de contribuyentes
+                del impuesto predial. Se invita a los propietarios a verificar sus datos en las oficinas del Ayuntamiento.
+              </p>
+              <a href="#" class="noticia-card__link">Leer comunicado completo <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Noticia 4 -->
+          <article class="noticia-card" data-reveal>
+            <div class="noticia-card__bar"></div>
+            <div class="noticia-card__body">
+              <div class="noticia-card__meta">
+                <span class="noticia-card__date">28 de febrero de 2026</span>
+                <span class="badge badge--online">Salud</span>
+              </div>
+              <h2 class="noticia-card__title">Jornada de salud comunitaria en la cabecera municipal</h2>
+              <p class="noticia-card__excerpt">
+                En coordinación con la Secretaría de Salud del Estado de Sonora, se realizará una jornada de atención
+                médica gratuita para habitantes del municipio, incluyendo consultas generales y vacunación.
+              </p>
+              <a href="#" class="noticia-card__link">Leer comunicado completo <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Noticia 5 -->
+          <article class="noticia-card" data-reveal>
+            <div class="noticia-card__bar"></div>
+            <div class="noticia-card__body">
+              <div class="noticia-card__meta">
+                <span class="noticia-card__date">20 de febrero de 2026</span>
+                <span class="badge badge--presencial">Participación</span>
+              </div>
+              <h2 class="noticia-card__title">Convocatoria para comités de participación ciudadana</h2>
+              <p class="noticia-card__excerpt">
+                El Ayuntamiento convoca a la ciudadanía a integrar los comités de participación ciudadana para
+                el ejercicio 2026, con el objetivo de fortalecer la colaboración entre gobierno y sociedad.
+              </p>
+              <a href="#" class="noticia-card__link">Leer comunicado completo <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+          <!-- Noticia 6 -->
+          <article class="noticia-card" data-reveal>
+            <div class="noticia-card__bar"></div>
+            <div class="noticia-card__body">
+              <div class="noticia-card__meta">
+                <span class="noticia-card__date">15 de febrero de 2026</span>
+                <span class="badge badge--online">Medio Ambiente</span>
+              </div>
+              <h2 class="noticia-card__title">Inicio de la temporada de reforestación en la sierra de Arivechi</h2>
+              <p class="noticia-card__excerpt">
+                Como parte del programa de conservación ambiental, el gobierno municipal invita a la comunidad a
+                sumarse a las jornadas de reforestación en zonas de la Sierra Madre Occidental dentro del municipio.
+              </p>
+              <a href="#" class="noticia-card__link">Leer comunicado completo <span aria-hidden="true">&rarr;</span></a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- === FOOTER === -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Columna 1: Institucional -->
+        <div class="footer__col">
+          <div class="footer__brand">
+            <span class="footer__brand-icon" aria-hidden="true">&#x25C8;</span>
+            <span class="footer__brand-text">H. Ayuntamiento de Arivechi</span>
+          </div>
+          <address class="footer__address">
+            Plaza Principal S/N, Arivechi, Sonora<br>
+            C.P. 85680, México
+          </address>
+        </div>
+
+        <!-- Columna 2: Navegación -->
+        <div class="footer__col">
+          <h3 class="footer__col-title">Navegación</h3>
+          <a href="index.html" class="footer__link">Inicio</a>
+          <a href="gobierno.html" class="footer__link">Gobierno</a>
+          <a href="tramites.html" class="footer__link">Trámites y Servicios</a>
+          <a href="transparencia.html" class="footer__link">Transparencia</a>
+        </div>
+
+        <!-- Columna 3: Información -->
+        <div class="footer__col">
+          <h3 class="footer__col-title">Información</h3>
+          <a href="index.html#turismo" class="footer__link">Turismo</a>
+          <a href="noticias.html" class="footer__link">Sala de Prensa</a>
+          <a href="transparencia.html#aviso-privacidad" class="footer__link">Aviso de Privacidad</a>
+        </div>
+
+        <!-- Columna 4: Contacto -->
+        <div class="footer__col">
+          <h3 class="footer__col-title">Contacto</h3>
+          <p class="footer__text">
+            IV Distrito Electoral Federal (Guaymas)<br>
+            VII Distrito Electoral Estatal (Agua Prieta)
+          </p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 H. Ayuntamiento de Arivechi, Sonora &middot; Todos los derechos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+/* ============================================================
+   GOBIERNO.CSS — Estilos de Gobierno Municipal
+   H. Ayuntamiento de Arivechi, Sonora
+   ============================================================ */
+
+/* === HERO === */
+.page-hero--gobierno {
+  background: linear-gradient(135deg, var(--gob-primary) 0%, var(--gob-blue) 100%);
+}
+
+/* === ORGANIGRAMA === */
+.organigrama {
+  text-align: center;
+}
+
+.organigrama__chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Nodo / tarjeta del organigrama */
+.organigrama__node {
+  background: var(--gob-bg-white);
+  border: 1px solid var(--gob-border);
+  border-top: 3px solid var(--gob-primary);
+  border-radius: var(--radius-md);
+  padding: var(--sp-sm) var(--sp-md);
+  min-width: 180px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.organigrama__node:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.organigrama__node--presidente {
+  border-top-color: var(--gob-gold);
+  min-width: 220px;
+}
+
+.organigrama__node-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  margin-bottom: 0.2rem;
+}
+
+.organigrama__node-name {
+  font-size: 0.82rem;
+  color: var(--gob-text-muted);
+  font-style: italic;
+}
+
+/* Conector vertical */
+.organigrama__connector {
+  width: 2px;
+  height: 30px;
+  background-color: var(--gob-border);
+  margin: 0 auto;
+}
+
+/* Nivel con múltiples nodos */
+.organigrama__level {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-md);
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* Conectores horizontales entre nodos del mismo nivel */
+.organigrama__level--connected {
+  padding-top: 30px;
+}
+
+.organigrama__level--connected::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 15px;
+  background-color: var(--gob-border);
+  transform: translateX(-50%);
+}
+
+.organigrama__level--connected::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  height: 2px;
+  background-color: var(--gob-border);
+  /* Se ajusta con left/right en cada nivel */
+}
+
+.organigrama__level--3col::after {
+  left: calc(50% - 160px);
+  right: calc(50% - 160px);
+}
+
+/* Conector vertical individual de cada nodo en nivel conectado */
+.organigrama__level--connected .organigrama__node::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  width: 2px;
+  height: 15px;
+  background-color: var(--gob-border);
+  transform: translateX(-50%);
+}
+
+/* Regidores */
+.organigrama__regidores {
+  background: var(--gob-bg);
+  border: 1px solid var(--gob-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-md) var(--sp-lg);
+  max-width: 500px;
+  text-align: center;
+}
+
+.organigrama__regidores-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  margin-bottom: 0.3rem;
+}
+
+.organigrama__regidores-text {
+  font-size: 0.85rem;
+  color: var(--gob-text-secondary);
+}
+
+/* Nota legal */
+.organigrama__nota {
+  margin-top: var(--sp-lg);
+  font-size: 0.88rem;
+  color: var(--gob-text-secondary);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Responsive: móvil a vertical */
+@media (max-width: 767px) {
+  .organigrama__level {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .organigrama__level--connected {
+    padding-top: 0;
+  }
+
+  .organigrama__level--connected::before,
+  .organigrama__level--connected::after {
+    display: none;
+  }
+
+  .organigrama__level--connected .organigrama__node::before {
+    display: none;
+  }
+
+  .organigrama__level .organigrama__node {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .organigrama__connector--between {
+    display: block;
+  }
+
+  .organigrama__regidores {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* === DIRECTORIO === */
+.directorio__table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.directorio__table {
+  min-width: 600px;
+  background-color: var(--gob-bg-white);
+}
+
+.directorio__table thead {
+  background-color: var(--gob-primary);
+}
+
+.directorio__table th {
+  padding: 0.85rem 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.directorio__table td {
+  padding: 0.75rem 1rem;
+  font-size: 0.92rem;
+  color: var(--gob-text);
+  border-bottom: 1px solid var(--gob-border-light);
+}
+
+.directorio__table tbody tr:nth-child(even) {
+  background-color: var(--gob-bg-alt);
+}
+
+.directorio__table tbody tr:hover {
+  background-color: var(--gob-primary-bg);
+}
+
+.directorio__nota {
+  margin-top: var(--sp-sm);
+  font-size: 0.82rem;
+  color: var(--gob-text-muted);
+  font-style: italic;
+}
+
+/* Responsive: tarjetas en móvil */
+@media (max-width: 767px) {
+  .directorio__table-wrapper {
+    overflow-x: visible;
+  }
+
+  .directorio__table {
+    min-width: 0;
+  }
+
+  .directorio__table thead {
+    display: none;
+  }
+
+  .directorio__table tbody tr {
+    display: block;
+    background-color: var(--gob-bg-white);
+    border: 1px solid var(--gob-border-light);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--sp-xs);
+    padding: var(--sp-sm);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .directorio__table tbody tr:nth-child(even) {
+    background-color: var(--gob-bg-white);
+  }
+
+  .directorio__table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid var(--gob-border-light);
+    font-size: 0.88rem;
+  }
+
+  .directorio__table td:last-child {
+    border-bottom: none;
+  }
+
+  .directorio__table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--gob-text-muted);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: var(--sp-sm);
+    flex-shrink: 0;
+  }
+}
+
+/* === PLAN MUNICIPAL DE DESARROLLO === */
+.plan-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-md);
+}
+
+@media (min-width: 768px) {
+  .plan-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.plan-card {
+  background: var(--gob-bg-white);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-md);
+  box-shadow: var(--shadow-sm);
+  border-top: 3px solid var(--gob-gold);
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.plan-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.plan-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--gob-primary-bg);
+  border-radius: var(--radius-md);
+  font-size: 1.4rem;
+  margin-bottom: var(--sp-sm);
+}
+
+.plan-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  margin-bottom: 0.4rem;
+}
+
+.plan-card__text {
+  font-size: 0.9rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.6;
+}
+
+.plan__nota {
+  margin-top: var(--sp-lg);
+  padding: var(--sp-sm) var(--sp-md);
+  background-color: var(--gob-bg);
+  border-radius: var(--radius-md);
+  font-size: 0.88rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.6;
+}

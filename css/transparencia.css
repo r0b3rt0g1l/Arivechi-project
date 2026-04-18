@@ -1,0 +1,257 @@
+/* ============================================================
+   TRANSPARENCIA.CSS — Estilos del Portal de Transparencia
+   H. Ayuntamiento de Arivechi, Sonora
+   ============================================================ */
+
+/* === HERO === */
+.page-hero--transparencia {
+  background: linear-gradient(135deg, var(--gob-blue) 0%, var(--gob-primary) 100%);
+}
+
+/* === MARCO LEGAL === */
+.marco-legal {
+  background-color: var(--gob-bg-white);
+  border-left: 4px solid var(--gob-primary);
+  border-radius: var(--radius-md);
+  padding: var(--sp-md);
+  margin-bottom: var(--sp-lg);
+  font-size: 0.95rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.7;
+}
+
+/* === BÚSQUEDA === */
+.transparencia-busqueda {
+  margin-bottom: var(--sp-lg);
+}
+
+.transparencia-busqueda__bar {
+  display: flex;
+  gap: var(--sp-xs);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.transparencia-busqueda__input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1.5px solid var(--gob-border);
+  border-radius: var(--radius-md);
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.transparencia-busqueda__input:focus {
+  outline: none;
+  border-color: var(--gob-primary);
+  box-shadow: 0 0 0 3px rgba(107, 22, 41, 0.12);
+}
+
+.transparencia-busqueda__btn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--gob-primary);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color 0.25s var(--ease);
+}
+
+.transparencia-busqueda__btn:hover {
+  background-color: var(--gob-primary-light);
+}
+
+.transparencia-busqueda__empty {
+  text-align: center;
+  padding: var(--sp-lg) var(--sp-md);
+  color: var(--gob-text-muted);
+  font-size: 0.95rem;
+}
+
+.transparencia-busqueda__empty a {
+  color: var(--gob-primary);
+  font-weight: 600;
+}
+
+/* === ACORDEONES === */
+.acordeon {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.acordeon__item {
+  border-bottom: 1px solid var(--gob-border-light);
+}
+
+.acordeon__item:last-child {
+  border-bottom: none;
+}
+
+.acordeon__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem var(--sp-md);
+  background-color: var(--gob-bg-white);
+  border: none;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  gap: var(--sp-sm);
+  transition: all 0.2s var(--ease);
+  font-family: var(--font-heading);
+}
+
+.acordeon__header:hover {
+  background-color: var(--gob-bg);
+}
+
+.acordeon__item--active .acordeon__header {
+  border-left-color: var(--gob-primary);
+  background-color: var(--gob-bg-alt);
+}
+
+.acordeon__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s var(--ease);
+}
+
+.acordeon__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--gob-text-muted);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.acordeon__item--active .acordeon__icon {
+  transform: rotate(90deg);
+}
+
+.acordeon__number {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gob-gold);
+  min-width: 2rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.acordeon__title {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gob-text);
+}
+
+.acordeon__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s var(--ease);
+}
+
+.acordeon__content {
+  padding: var(--sp-sm) var(--sp-md) var(--sp-md);
+  padding-left: calc(var(--sp-md) + 2rem + var(--sp-sm) + 20px);
+  font-size: 0.92rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.7;
+}
+
+.acordeon__content p {
+  margin-bottom: var(--sp-sm);
+}
+
+.acordeon__content p:last-child {
+  margin-bottom: 0;
+}
+
+.acordeon__content ul {
+  margin-bottom: var(--sp-sm);
+  padding-left: 1.2rem;
+}
+
+.acordeon__content li {
+  list-style: disc;
+  margin-bottom: 0.35rem;
+}
+
+.acordeon__content em {
+  color: var(--gob-text-muted);
+  font-style: italic;
+}
+
+/* Tabla dentro de acordeón */
+.acordeon__table {
+  width: 100%;
+  font-size: 0.85rem;
+  margin-bottom: var(--sp-sm);
+}
+
+.acordeon__table th {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--gob-text);
+  border-bottom: 2px solid var(--gob-border);
+  background-color: var(--gob-bg);
+}
+
+.acordeon__table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--gob-border-light);
+  color: var(--gob-text-secondary);
+}
+
+/* Responsive acordeón */
+@media (max-width: 767px) {
+  .acordeon__content {
+    padding-left: var(--sp-md);
+  }
+
+  .acordeon__number {
+    display: none;
+  }
+}
+
+/* === AVISO DE PRIVACIDAD === */
+.aviso-privacidad {
+  background-color: var(--gob-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-lg);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.aviso-privacidad__title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  margin-bottom: var(--sp-sm);
+}
+
+.aviso-privacidad__text {
+  font-size: 0.9rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.8;
+}
+
+.aviso-privacidad__text p {
+  margin-bottom: var(--sp-sm);
+}
+
+.aviso-privacidad__text p:last-child {
+  margin-bottom: 0;
+}
+
+.aviso-privacidad__text strong {
+  color: var(--gob-text);
+}

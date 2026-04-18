@@ -1,0 +1,125 @@
+/* ============================================================
+   NOTICIAS.CSS — Estilos de la Sala de Prensa
+   H. Ayuntamiento de Arivechi, Sonora
+   ============================================================ */
+
+/* === HERO NOTICIAS === */
+.page-hero--noticias {
+  background: linear-gradient(135deg, var(--gob-primary) 0%, var(--gob-primary-light) 100%);
+}
+
+/* === AVISO PLACEHOLDER === */
+.noticias-aviso {
+  background-color: var(--gob-blue-bg);
+  border: 1px solid rgba(12, 74, 110, 0.15);
+  border-radius: var(--radius-md);
+  padding: var(--sp-sm) var(--sp-md);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-xs);
+  margin-bottom: var(--sp-lg);
+}
+
+.noticias-aviso__icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+.noticias-aviso__text {
+  font-size: 0.9rem;
+  color: var(--gob-blue);
+  line-height: 1.6;
+}
+
+/* === GRID DE NOTICIAS === */
+.noticias-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-md);
+}
+
+@media (min-width: 768px) {
+  .noticias-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .noticias-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* === TARJETA DE NOTICIA === */
+.noticia-card {
+  background-color: var(--gob-bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+  display: flex;
+  flex-direction: column;
+}
+
+.noticia-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.noticia-card__bar {
+  height: 4px;
+  background-color: var(--gob-primary);
+}
+
+.noticia-card__body {
+  padding: var(--sp-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.noticia-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.noticia-card__date {
+  font-size: 0.8rem;
+  color: var(--gob-text-muted);
+}
+
+.noticia-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  line-height: 1.35;
+}
+
+.noticia-card__excerpt {
+  font-size: 0.92rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.noticia-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gob-primary);
+  text-decoration: none;
+  margin-top: auto;
+  transition: gap 0.2s var(--ease);
+}
+
+.noticia-card__link:hover {
+  gap: 0.6rem;
+  color: var(--gob-primary-light);
+}

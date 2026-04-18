@@ -1,0 +1,662 @@
+/* ============================================================
+   HOME.CSS — Estilos de la página principal (index.html)
+   H. Ayuntamiento de Arivechi, Sonora
+   ============================================================ */
+
+/* === HERO PRINCIPAL === */
+.hero {
+  position: relative;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--gob-primary) 0%, var(--gob-blue) 100%);
+  color: #fff;
+  overflow: hidden;
+  padding: var(--sp-xl) 0 var(--sp-lg);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 var(--sp-sm);
+}
+
+.hero__icon {
+  font-size: 3rem;
+  color: var(--gob-gold-light);
+  margin-bottom: var(--sp-sm);
+  animation: fadeInUp 0.6s var(--ease-expo) both;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: var(--sp-xs);
+  animation: fadeInUp 0.6s var(--ease-expo) 0.1s both;
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--sp-lg);
+  animation: fadeInUp 0.6s var(--ease-expo) 0.2s both;
+}
+
+.hero__cta {
+  display: flex;
+  gap: var(--sp-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.6s var(--ease-expo) 0.3s both;
+}
+
+/* Barra de cifras */
+.hero__stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: var(--sp-lg);
+  padding-top: var(--sp-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  animation: fadeInUp 0.6s var(--ease-expo) 0.4s both;
+}
+
+.hero__stat {
+  text-align: center;
+}
+
+.hero__stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--gob-gold-light);
+  display: block;
+  line-height: 1.2;
+}
+
+.hero__stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.2rem;
+}
+
+/* Scroll indicator */
+.hero__scroll {
+  position: absolute;
+  bottom: var(--sp-sm);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.hero__scroll-line {
+  display: block;
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 0.5rem auto 0;
+  animation: scrollPulse 2s ease-in-out infinite;
+  transform-origin: top;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 380px;
+    padding: var(--sp-lg) 0 var(--sp-xl);
+  }
+
+  .hero__stats {
+    gap: 1.5rem;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+}
+
+/* === ACCESOS DIRECTOS A SERVICIOS === */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-sm);
+}
+
+@media (min-width: 768px) {
+  .servicios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .servicios-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.servicio-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--sp-md) var(--sp-sm);
+  background: var(--gob-bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+}
+
+.servicio-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.servicio-card:hover .servicio-card__icon {
+  color: var(--gob-gold);
+  background-color: var(--gob-gold-bg);
+}
+
+.servicio-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--gob-primary-bg);
+  color: var(--gob-primary);
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  transition: all 0.3s var(--ease);
+}
+
+.servicio-card__title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gob-text);
+}
+
+/* === NOTICIAS HOME === */
+.noticias-home__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--sp-lg);
+  flex-wrap: wrap;
+  gap: var(--sp-sm);
+}
+
+.noticias-home__link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gob-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: gap 0.2s var(--ease);
+}
+
+.noticias-home__link:hover {
+  gap: 0.6rem;
+}
+
+.noticias-home__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-md);
+}
+
+@media (min-width: 768px) {
+  .noticias-home__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tarjeta de noticia (home) */
+.noticia-home-card {
+  background: var(--gob-bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s var(--ease);
+}
+
+.noticia-home-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.noticia-home-card__bar {
+  height: 4px;
+  background-color: var(--gob-primary);
+}
+
+.noticia-home-card__body {
+  padding: var(--sp-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.noticia-home-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.noticia-home-card__date {
+  font-size: 0.78rem;
+  color: var(--gob-text-muted);
+}
+
+.noticia-home-card__title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  line-height: 1.35;
+}
+
+.noticia-home-card__excerpt {
+  font-size: 0.88rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.noticia-home-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gob-primary);
+  text-decoration: none;
+  margin-top: auto;
+  transition: gap 0.2s var(--ease);
+}
+
+.noticia-home-card__link:hover {
+  gap: 0.6rem;
+  color: var(--gob-primary-light);
+}
+
+/* === SOBRE EL MUNICIPIO === */
+.municipio__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-lg);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .municipio__grid {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.municipio__lead {
+  font-family: var(--font-accent);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--gob-text);
+  line-height: 1.5;
+  margin-bottom: var(--sp-sm);
+}
+
+.municipio__text p {
+  margin-bottom: var(--sp-sm);
+  color: var(--gob-text-secondary);
+  line-height: 1.7;
+}
+
+.municipio__datos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-sm);
+}
+
+.municipio__dato {
+  background: var(--gob-bg-white);
+  border-left: 3px solid var(--gob-gold);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.municipio__dato-number {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--gob-primary);
+  display: block;
+  line-height: 1.2;
+}
+
+.municipio__dato-label {
+  font-size: 0.78rem;
+  color: var(--gob-text-muted);
+  margin-top: 0.15rem;
+  line-height: 1.4;
+}
+
+/* === TURISMO === */
+.turismo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-md);
+}
+
+@media (min-width: 768px) {
+  .turismo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.turismo-card {
+  background: var(--gob-bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all 0.3s var(--ease);
+}
+
+.turismo-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.turismo-card__image {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.turismo-card__image--1 { background: linear-gradient(135deg, #6B1629, #B8860B); }
+.turismo-card__image--2 { background: linear-gradient(135deg, #1B6B3A, #0C4A6E); }
+.turismo-card__image--3 { background: linear-gradient(135deg, #8C2038, #6B1629); }
+.turismo-card__image--4 { background: linear-gradient(135deg, #0C4A6E, #1B6B3A); }
+
+.turismo-card__badge {
+  position: absolute;
+  top: var(--sp-sm);
+  left: var(--sp-sm);
+}
+
+.turismo-card__body {
+  padding: var(--sp-md);
+}
+
+.turismo-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  margin-bottom: 0.4rem;
+}
+
+.turismo-card__desc {
+  font-size: 0.9rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+.turismo-card__location {
+  font-size: 0.82rem;
+  color: var(--gob-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* === CULTURA === */
+.cultura-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cultura-item {
+  display: flex;
+  gap: var(--sp-md);
+  padding: var(--sp-md) 0;
+  border-bottom: 1px solid var(--gob-border-light);
+  align-items: flex-start;
+}
+
+.cultura-item:last-child {
+  border-bottom: none;
+}
+
+.cultura-item__number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gob-gold);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+.cultura-item__content {
+  flex: 1;
+}
+
+.cultura-item__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  margin-bottom: 0.3rem;
+}
+
+.cultura-item__text {
+  font-size: 0.92rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.6;
+}
+
+/* === GALERÍA === */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-sm);
+}
+
+@media (min-width: 768px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .galeria-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .galeria-item--wide {
+    grid-column: span 2;
+  }
+}
+
+.galeria-item {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gob-bg);
+  border: 2px dashed var(--gob-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-md);
+  text-align: center;
+  transition: all 0.3s var(--ease);
+}
+
+.galeria-item:hover {
+  border-color: var(--gob-gold);
+  background-color: var(--gob-gold-bg);
+}
+
+.galeria-item__title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gob-text);
+  margin-bottom: 0.25rem;
+}
+
+.galeria-item__placeholder {
+  font-size: 0.82rem;
+  color: var(--gob-text-muted);
+}
+
+.galeria__nota {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--gob-text-secondary);
+  margin-top: var(--sp-md);
+}
+
+/* === CONTACTO === */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-lg);
+}
+
+@media (min-width: 768px) {
+  .contacto-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contacto-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+}
+
+.contacto-card {
+  background: var(--gob-bg-white);
+  border-radius: var(--radius-md);
+  padding: var(--sp-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.contacto-card__title {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contacto-card__text {
+  font-size: 0.9rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.7;
+}
+
+.contacto-card__text strong {
+  color: var(--gob-text);
+}
+
+.contacto-map {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.contacto-map iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+  display: block;
+}
+
+/* Formulario de contacto */
+.contacto-form {
+  background: var(--gob-bg-white);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.contacto-form__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  margin-bottom: var(--sp-sm);
+}
+
+.contacto-form__note {
+  font-size: 0.8rem;
+  color: var(--gob-text-muted);
+  font-style: italic;
+  margin-top: var(--sp-sm);
+}
+
+/* Éxito del formulario de contacto */
+.contact-success {
+  text-align: center;
+  padding: var(--sp-lg) var(--sp-md);
+}
+
+.contact-success__icon {
+  font-size: 3rem;
+  color: var(--gob-success);
+  margin-bottom: var(--sp-sm);
+}
+
+.contact-success__title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gob-text);
+  margin-bottom: 0.5rem;
+}
+
+.contact-success__text {
+  font-size: 0.95rem;
+  color: var(--gob-text-secondary);
+}
