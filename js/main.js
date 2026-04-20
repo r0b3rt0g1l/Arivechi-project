@@ -12,7 +12,6 @@
     if (!hero) return;
 
     const content = hero.querySelector('.hero__content');
-    const scrollIndicator = hero.querySelector('.hero__scroll');
     let ticking = false;
 
     function update() {
@@ -26,9 +25,6 @@
       hero.style.opacity = opacity;
       if (content) {
         content.style.transform = 'translateY(' + translate + 'px)';
-      }
-      if (scrollIndicator) {
-        scrollIndicator.style.opacity = Math.max(0, 1 - progress * 3);
       }
       ticking = false;
     }

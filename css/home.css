@@ -125,30 +125,6 @@
   margin-top: 0.2rem;
 }
 
-/* Scroll indicator */
-.hero__scroll {
-  position: absolute;
-  bottom: var(--sp-sm);
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  z-index: 1;
-}
-
-.hero__scroll-line {
-  display: block;
-  width: 1px;
-  height: 24px;
-  background: rgba(255, 255, 255, 0.4);
-  margin: 0.5rem auto 0;
-  animation: scrollPulse 2s ease-in-out infinite;
-  transform-origin: top;
-}
-
 @media (max-width: 767px) {
   .hero {
     min-height: 380px;
@@ -157,10 +133,6 @@
 
   .hero__stats {
     gap: 1.5rem;
-  }
-
-  .hero__scroll {
-    display: none;
   }
 }
 
