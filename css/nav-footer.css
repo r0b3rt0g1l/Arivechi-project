@@ -61,7 +61,7 @@
   align-items: center;
   position: relative;
   z-index: 99;
-  transition: box-shadow 0.3s var(--ease);
+  transition: height 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
 .navbar--sticky {
@@ -70,6 +70,15 @@
   left: 0;
   right: 0;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar--compact {
+  height: calc(var(--navbar-height) - 16px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+.navbar--compact .nav__escudo {
+  height: 32px;
 }
 
 .navbar--sticky + .navbar-spacer {
@@ -107,6 +116,7 @@
   width: auto;
   border-radius: 4px;
   display: block;
+  transition: height 0.3s var(--ease);
 }
 
 .navbar__brand-text {
