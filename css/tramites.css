@@ -35,6 +35,21 @@
   }
 }
 
+@media (max-width: 768px) {
+  .tramites-grid {
+    grid-template-columns: 1fr !important;
+    overflow-x: visible !important;
+    display: grid !important;
+    gap: 1rem;
+  }
+
+  .tramite-card {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+  }
+}
+
 .tramite-card {
   display: flex;
   flex-direction: column;
