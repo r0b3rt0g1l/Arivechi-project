@@ -102,6 +102,13 @@
   line-height: 1;
 }
 
+.nav__escudo {
+  height: 40px;
+  width: auto;
+  border-radius: 4px;
+  display: block;
+}
+
 .navbar__brand-text {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -502,6 +509,41 @@
 .footer__brand-icon {
   font-size: 1.4rem;
   color: var(--gob-gold-light);
+}
+
+.footer__escudo {
+  height: 60px;
+  width: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.footer__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: var(--sp-sm);
+  padding: 0.4rem 0.75rem;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 4px;
+  color: var(--gob-gold-light);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.footer__social:hover,
+.footer__social:focus-visible {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.footer__social-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
 .footer__brand-text {
