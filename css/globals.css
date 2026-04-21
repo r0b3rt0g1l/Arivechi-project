@@ -3,8 +3,22 @@
    H. Ayuntamiento de Arivechi, Sonora
    ============================================================ */
 
+/* === FORZAR MODO CLARO === */
+html {
+  color-scheme: light only;
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #F5F5F5 !important;
+    color: #1A1A1A !important;
+    color-scheme: light only !important;
+  }
+}
+
 /* === VARIABLES GLOBALES === */
 :root {
+  color-scheme: light;
   /* --- Institucionales --- */
   --gob-primary: #6B1629;
   --gob-primary-light: #8C2038;

@@ -447,26 +447,38 @@
         feedback.classList.remove('contact-feedback--success', 'contact-feedback--error');
       }
 
-      fetch(form.action, {
+      const formData = new FormData(form);
+      const payload = {};
+      formData.forEach(function (value, key) { payload[key] = value; });
+
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
       })
         .then(function (response) {
-          if (response.ok) return response.json();
-          return response.json().then(function (data) { throw data; });
+          return response.json().then(function (data) {
+            return { ok: response.ok, data: data };
+          });
         })
-        .then(function () {
-          const success = document.getElementById('contact-success');
-          if (success) {
-            form.style.display = 'none';
-            success.hidden = false;
-          } else if (feedback) {
-            feedback.textContent = '¡Mensaje enviado correctamente!';
-            feedback.classList.add('contact-feedback--success');
-            feedback.hidden = false;
+        .then(function (result) {
+          if (result.ok && result.data && result.data.success) {
+            const success = document.getElementById('contact-success');
+            if (success) {
+              form.style.display = 'none';
+              success.hidden = false;
+            } else if (feedback) {
+              feedback.textContent = '¡Mensaje enviado correctamente!';
+              feedback.classList.add('contact-feedback--success');
+              feedback.hidden = false;
+            }
+            form.reset();
+          } else {
+            throw new Error((result.data && result.data.message) || 'submit failed');
           }
-          form.reset();
         })
         .catch(function () {
           if (feedback) {
