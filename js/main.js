@@ -293,6 +293,70 @@
     update();
   }
 
+  /* === LIGHTBOX === */
+  function initLightbox() {
+    const triggers = document.querySelectorAll('[data-lightbox-src]');
+    if (!triggers.length) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Imagen ampliada');
+    overlay.innerHTML =
+      '<div class="lightbox__content">' +
+        '<button type="button" class="lightbox__close" aria-label="Cerrar imagen">' +
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.71L12 12l6.3 6.29-1.42 1.42L10.59 13.4 4.29 19.71 2.88 18.29 9.17 12 2.88 5.71 4.29 4.29 10.59 10.59 16.88 4.29z"/></svg>' +
+        '</button>' +
+        '<img class="lightbox__image" alt="">' +
+        '<span class="lightbox__caption"></span>' +
+      '</div>';
+    document.body.appendChild(overlay);
+
+    const img = overlay.querySelector('.lightbox__image');
+    const caption = overlay.querySelector('.lightbox__caption');
+    const closeBtn = overlay.querySelector('.lightbox__close');
+    let lastTrigger = null;
+
+    function open(src, captionText, triggerEl) {
+      img.src = src;
+      img.alt = captionText || '';
+      caption.textContent = captionText || '';
+      overlay.classList.add('lightbox--open');
+      document.body.style.overflow = 'hidden';
+      lastTrigger = triggerEl || null;
+      closeBtn.focus();
+    }
+
+    function close() {
+      overlay.classList.remove('lightbox--open');
+      document.body.style.overflow = '';
+      img.src = '';
+      if (lastTrigger && typeof lastTrigger.focus === 'function') {
+        lastTrigger.focus();
+      }
+    }
+
+    triggers.forEach(function (trigger) {
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        const src = trigger.getAttribute('data-lightbox-src');
+        const cap = trigger.getAttribute('data-lightbox-caption') || '';
+        if (src) open(src, cap, trigger);
+      });
+    });
+
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('lightbox--open')) {
+        close();
+      }
+    });
+  }
+
   /* === SMOOTH SCROLL === */
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
@@ -372,25 +436,49 @@
 
       if (!valid) return;
 
-      /* Simulación de envío */
       const btn = form.querySelector('button[type="submit"]');
       const btnText = btn.textContent;
+      const feedback = document.getElementById('contact-feedback');
       btn.disabled = true;
       btn.innerHTML = '<span class="spinner"></span> Enviando...';
+      if (feedback) {
+        feedback.hidden = true;
+        feedback.textContent = '';
+        feedback.classList.remove('contact-feedback--success', 'contact-feedback--error');
+      }
 
-      setTimeout(function () {
-        btn.disabled = false;
-        btn.textContent = btnText;
-
-        /* Mensaje de éxito */
-        const success = document.getElementById('contact-success');
-        if (success) {
-          form.style.display = 'none';
-          success.hidden = false;
-        }
-
-        form.reset();
-      }, 1500);
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(function (response) {
+          if (response.ok) return response.json();
+          return response.json().then(function (data) { throw data; });
+        })
+        .then(function () {
+          const success = document.getElementById('contact-success');
+          if (success) {
+            form.style.display = 'none';
+            success.hidden = false;
+          } else if (feedback) {
+            feedback.textContent = '¡Mensaje enviado correctamente!';
+            feedback.classList.add('contact-feedback--success');
+            feedback.hidden = false;
+          }
+          form.reset();
+        })
+        .catch(function () {
+          if (feedback) {
+            feedback.textContent = 'Error al enviar. Intente nuevamente.';
+            feedback.classList.add('contact-feedback--error');
+            feedback.hidden = false;
+          }
+        })
+        .then(function () {
+          btn.disabled = false;
+          btn.textContent = btnText;
+        });
     });
 
     /* Validación en blur */
@@ -454,6 +542,7 @@
     initActivePage();
     initSmoothScroll();
     initBackToTop();
+    initLightbox();
     initContactForm();
   });
 
