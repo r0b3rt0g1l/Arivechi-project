@@ -69,16 +69,26 @@
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  background-color: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .navbar--compact {
   height: calc(var(--navbar-height) - 16px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 .navbar--compact .nav__escudo {
   height: 32px;
+}
+
+@media (max-width: 1023px) {
+  .navbar--sticky {
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, var(--gob-primary), var(--gob-gold)) 1;
+  }
 }
 
 .navbar--sticky + .navbar-spacer {

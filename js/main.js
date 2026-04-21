@@ -49,7 +49,6 @@
     const topbarHeight = parseInt(getComputedStyle(document.documentElement)
       .getPropertyValue('--topbar-height'), 10) || 36;
 
-    let lastY = window.scrollY;
     let ticking = false;
 
     function update() {
@@ -63,13 +62,12 @@
         if (spacer) spacer.style.display = 'none';
       }
 
-      if (y > lastY && y > 140) {
+      if (y > 60) {
         navbar.classList.add('navbar--compact');
-      } else if (y < lastY - 4) {
+      } else {
         navbar.classList.remove('navbar--compact');
       }
 
-      lastY = y;
       ticking = false;
     }
 
@@ -267,7 +265,7 @@
     btn.type = 'button';
     btn.className = 'back-to-top';
     btn.setAttribute('aria-label', 'Volver arriba');
-    btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>';
+    btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     document.body.appendChild(btn);
 
     let ticking = false;

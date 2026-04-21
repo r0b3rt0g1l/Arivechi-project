@@ -605,8 +605,8 @@ table {
 /* Botón volver arriba */
 .back-to-top {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: 2rem;
+  right: 2rem;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -619,10 +619,10 @@ table {
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(12px);
+  transform: translateY(12px) scale(1);
   transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), background 0.2s var(--ease);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
-  z-index: 80;
+  z-index: 999;
 }
 
 .back-to-top svg {
@@ -633,7 +633,8 @@ table {
 
 .back-to-top:hover,
 .back-to-top:focus-visible {
-  background: var(--gob-primary-light);
+  background: var(--gob-gold);
+  transform: translateY(0) scale(1.1);
 }
 
 .back-to-top--visible {
@@ -644,8 +645,14 @@ table {
 
 @media (max-width: 600px) {
   .back-to-top {
-    bottom: 1rem;
+    bottom: 1.5rem;
     right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+  .back-to-top svg {
+    width: 18px;
+    height: 18px;
   }
 }
 
