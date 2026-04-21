@@ -3,22 +3,67 @@
    H. Ayuntamiento de Arivechi, Sonora
    ============================================================ */
 
-/* === FORZAR MODO CLARO === */
+/* === FORZAR MODO CLARO (iOS / Android) === */
+:root {
+  color-scheme: only light !important;
+}
+
 html {
-  color-scheme: light only;
+  -webkit-appearance: none;
+  color-scheme: only light !important;
+}
+
+*, *::before, *::after {
+  color-scheme: only light !important;
 }
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: only light !important;
+  }
+
   html, body {
     background-color: #F5F5F5 !important;
     color: #1A1A1A !important;
-    color-scheme: light only !important;
+  }
+
+  .section--light,
+  .sobre,
+  .gobierno-section,
+  .cultura,
+  [style*="background:var(--white)"],
+  [style*="background:var(--gob-bg-white)"] {
+    background-color: #FFFFFF !important;
+    color: #1A1A1A !important;
+  }
+
+  .scope-card,
+  .stat-item,
+  .tramite-card,
+  .news-card,
+  .contacto-card,
+  .accordion,
+  .accordion__content,
+  .org-card,
+  .plan-card,
+  table,
+  td, th,
+  .form-group input,
+  .form-group select,
+  .form-group textarea,
+  .form-group label {
+    background-color: inherit;
+    color: inherit;
+    -webkit-text-fill-color: inherit;
+  }
+
+  img, svg, video, iframe {
+    filter: none !important;
   }
 }
 
 /* === VARIABLES GLOBALES === */
 :root {
-  color-scheme: light;
   /* --- Institucionales --- */
   --gob-primary: #6B1629;
   --gob-primary-light: #8C2038;
