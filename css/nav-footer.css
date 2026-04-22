@@ -43,6 +43,10 @@
   color: #fff;
 }
 
+.topbar__social:hover {
+  color: var(--gob-gold);
+}
+
 .topbar__sep {
   color: rgba(255, 255, 255, 0.3);
 }
