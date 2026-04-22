@@ -47,6 +47,23 @@
   color: var(--gob-gold);
 }
 
+.topbar__facebook {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.topbar__facebook svg {
+  width: 14px;
+  height: 14px;
+  fill: rgba(255,255,255,0.8);
+  transition: fill 0.3s;
+}
+
+.topbar__facebook:hover svg {
+  fill: #D4A843;
+}
+
 .topbar__sep {
   color: rgba(255, 255, 255, 0.3);
 }
