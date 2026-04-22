@@ -556,6 +556,24 @@
     initBackToTop();
     initLightbox();
     initContactForm();
+    initPrivacyPopup();
   });
+
+  /* === AVISO DE PRIVACIDAD (solo una vez por sesión) === */
+  function initPrivacyPopup() {
+    const overlay = document.getElementById('privacyOverlay');
+    const btn = document.getElementById('acceptPrivacy');
+    if (!overlay || !btn) return;
+
+    if (sessionStorage.getItem('privacyAccepted') === 'true') {
+      overlay.classList.add('hidden');
+      return;
+    }
+
+    btn.addEventListener('click', function () {
+      overlay.classList.add('hidden');
+      sessionStorage.setItem('privacyAccepted', 'true');
+    });
+  }
 
 })();

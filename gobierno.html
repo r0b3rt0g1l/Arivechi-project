@@ -369,44 +369,29 @@
   </section>
 
   <!-- === FOOTER === -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__col">
-          <div class="footer__brand">
-            <img src="assets/images/escudo-arivechi.png" alt="Escudo de Arivechi" class="footer__escudo">
-            <span class="footer__brand-text">H. Ayuntamiento de Arivechi</span>
-          </div>
-          <address class="footer__address">
-            Plaza Principal S/N, Arivechi, Sonora<br>
-            C.P. 85680, México
-          </address>
-          <a href="https://www.facebook.com/profile.php?id=100073040122918" class="footer__social" target="_blank" rel="noopener noreferrer">
-            <svg class="footer__social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.87.24-1.46 1.49-1.46H16.5V4.45C16.17 4.4 15.2 4.3 14.07 4.3c-2.36 0-3.97 1.44-3.97 4.08V10.5H7.5v3h2.6V21h3.4z"/></svg>
-            Síguenos en Facebook
-          </a>
-        </div>
-        <div class="footer__col">
-          <h3 class="footer__col-title">Navegación</h3>
-          <a href="index.html" class="footer__link">Inicio</a>
-          <a href="gobierno.html" class="footer__link">Gobierno</a>
-          <a href="tramites.html" class="footer__link">Trámites y Servicios</a>
-          <a href="transparencia.html" class="footer__link">Transparencia</a>
-          <a href="sevac.html" class="footer__link">SEvAC</a>
-        </div>
-        <div class="footer__col">
-          <h3 class="footer__col-title">Información</h3>
-          <a href="index.html#turismo" class="footer__link">Turismo</a>
-          <a href="noticias.html" class="footer__link">Sala de Prensa</a>
-          <a href="transparencia.html#aviso-privacidad" class="footer__link">Aviso de Privacidad</a>
-          <a href="#mapa-sitio" class="footer__link">Mapa del Sitio</a>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 H. Ayuntamiento de Arivechi, Sonora &middot; Todos los derechos reservados</p>
-      </div>
-    </div>
+  <footer style="background:#0C4A6E; text-align:center; padding:1rem; font-size:0.8rem; color:rgba(255,255,255,0.5);">
+    &copy; 2026 H. Ayuntamiento de Arivechi, Sonora
   </footer>
+
+  <!-- === AVISO DE PRIVACIDAD === -->
+  <div id="privacyOverlay" class="privacy-overlay">
+    <div class="privacy-popup">
+      <div class="privacy-popup__icon">🔒</div>
+      <h3 class="privacy-popup__title">Aviso de Privacidad</h3>
+      <p class="privacy-popup__text">
+        El H. Ayuntamiento de Arivechi, Sonora, con domicilio en Plaza Principal S/N, C.P. 85680,
+        es responsable del tratamiento de sus datos personales. Los datos recabados a través de este
+        portal serán utilizados exclusivamente para atención ciudadana, trámites municipales y
+        comunicación institucional, conforme a la Ley General de Protección de Datos Personales en
+        Posesión de Sujetos Obligados.
+      </p>
+      <p class="privacy-popup__text" style="font-size:0.85rem; color:#7A7A7A;">
+        Para ejercer sus derechos ARCO (Acceso, Rectificación, Cancelación y Oposición),
+        acuda a la Unidad de Transparencia del municipio.
+      </p>
+      <button id="acceptPrivacy" class="privacy-popup__btn">Aceptar y continuar</button>
+    </div>
+  </div>
 
 </body>
 </html>

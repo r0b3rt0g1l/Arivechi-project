@@ -844,3 +844,69 @@ select:focus-visible,
     padding-right: var(--sp-lg);
   }
 }
+
+/* === AVISO DE PRIVACIDAD (POPUP) === */
+.privacy-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 1rem;
+}
+
+.privacy-overlay.hidden {
+  display: none;
+}
+
+.privacy-popup {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.privacy-popup__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.privacy-popup__title {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.4rem;
+  color: #0C4A6E;
+  margin-bottom: 1rem;
+}
+
+.privacy-popup__text {
+  font-size: 0.9rem;
+  color: #4A4A4A;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.privacy-popup__btn {
+  background: #6B1629;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.8rem 2.5rem;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 0.5rem;
+}
+
+.privacy-popup__btn:hover {
+  background: #8C2038;
+}
