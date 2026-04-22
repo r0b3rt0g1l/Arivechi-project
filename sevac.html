@@ -12,11 +12,11 @@
     :root { color-scheme: only light !important; }
     html, body { background-color: #F5F5F5 !important; }
   </style>
-  <title>Sala de Prensa | H. Ayuntamiento de Arivechi</title>
-  <meta name="description" content="Noticias, comunicados de prensa y avisos del gobierno municipal de Arivechi, Sonora.">
-  <meta name="keywords" content="noticias, comunicados, sala de prensa, gobierno, Arivechi, Sonora">
-  <meta property="og:title" content="Sala de Prensa | H. Ayuntamiento de Arivechi">
-  <meta property="og:description" content="Noticias, comunicados de prensa y avisos del gobierno municipal de Arivechi, Sonora.">
+  <title>SEvAC | H. Ayuntamiento de Arivechi</title>
+  <meta name="description" content="Sistema de Evaluación y Armonización Contable del municipio de Arivechi, Sonora. Documentos de armonización contable y boletines oficiales.">
+  <meta name="keywords" content="SEvAC, armonización contable, CONAC, contabilidad gubernamental, Arivechi, Sonora">
+  <meta property="og:title" content="SEvAC | H. Ayuntamiento de Arivechi">
+  <meta property="og:description" content="Sistema de Evaluación y Armonización Contable del municipio de Arivechi, Sonora.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>">
@@ -25,8 +25,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/globals.css">
   <link rel="stylesheet" href="css/nav-footer.css">
-  <link rel="stylesheet" href="css/noticias.css">
+  <link rel="stylesheet" href="css/sevac.css">
   <script src="js/main.js" defer></script>
+  <script src="js/sevac.js" defer></script>
 </head>
 <body>
 
@@ -137,136 +138,154 @@
   <main id="main-content">
 
     <!-- Hero -->
-    <section class="page-hero page-hero--noticias">
+    <section class="page-hero page-hero--sevac">
       <div class="container">
         <nav class="page-hero__breadcrumb" aria-label="Ruta de navegación">
           <a href="index.html">Inicio</a>
           <span>/</span>
-          <span>Sala de Prensa</span>
+          <span>SEvAC</span>
         </nav>
-        <h1 class="page-hero__title">Sala de Prensa</h1>
-        <p class="page-hero__subtitle">Comunicados oficiales, noticias y avisos del gobierno municipal.</p>
+        <h1 class="page-hero__title">SEvAC</h1>
+        <p class="page-hero__subtitle">Sistema de Evaluación y Armonización Contable</p>
       </div>
     </section>
 
-    <!-- Noticias -->
-    <section class="section">
+    <!-- === CONTENIDO SEvAC === -->
+    <section class="section sevac-section" id="documentos">
       <div class="container">
-
-        <!-- Aviso -->
-        <div class="noticias-aviso" data-reveal>
-          <span class="noticias-aviso__icon" aria-hidden="true">&#8505;&#65039;</span>
-          <p class="noticias-aviso__text">
-            Esta sección se actualiza con los comunicados oficiales del H. Ayuntamiento.
-            Los contenidos mostrados actualmente son de ejemplo y serán reemplazados con información real.
-          </p>
+        <div class="section__header" data-reveal="fade">
+          <span class="section__tag">Armonización Contable</span>
+          <h2 class="section__title">Documentos SEvAC</h2>
+          <p class="section__subtitle">Información financiera y presupuestal del municipio, conforme a la Ley General de Contabilidad Gubernamental.</p>
         </div>
 
-        <!-- Grid de noticias -->
-        <div class="noticias-grid">
+        <div class="sevac-layout">
 
-          <!-- Noticia 1 -->
-          <article class="noticia-card" data-reveal>
-            <div class="noticia-card__bar"></div>
-            <div class="noticia-card__body">
-              <div class="noticia-card__meta">
-                <span class="noticia-card__date">15 de marzo de 2026</span>
-                <span class="badge badge--presencial">Obras Públicas</span>
+          <!-- Sidebar categorías -->
+          <aside class="sevac-sidebar" aria-label="Categorías de documentos" data-reveal="left">
+            <h3 class="sevac-sidebar__title">Categorías</h3>
+            <ul class="sevac-sidebar__list" id="sevac-categorias">
+              <li><button type="button" class="sevac-sidebar__link sevac-sidebar__link--active" data-categoria="todos">Información</button></li>
+              <li><button type="button" class="sevac-sidebar__link" data-categoria="cabildo">Cabildo</button></li>
+              <li><button type="button" class="sevac-sidebar__link" data-categoria="comunicacion">Comunicación social</button></li>
+              <li><button type="button" class="sevac-sidebar__link" data-categoria="directorio">Directorio de contacto</button></li>
+              <li><button type="button" class="sevac-sidebar__link" data-categoria="gabinete">Gabinete y dependencias</button></li>
+            </ul>
+
+            <!-- Select equivalente para móvil -->
+            <label for="sevac-categoria-select" class="sr-only">Categoría</label>
+            <select id="sevac-categoria-select" class="sevac-sidebar__select" aria-label="Categoría">
+              <option value="todos">Información</option>
+              <option value="cabildo">Cabildo</option>
+              <option value="comunicacion">Comunicación social</option>
+              <option value="directorio">Directorio de contacto</option>
+              <option value="gabinete">Gabinete y dependencias</option>
+            </select>
+          </aside>
+
+          <!-- Main: filtros + tabla -->
+          <div class="sevac-main" data-reveal="right">
+
+            <!-- Filtros -->
+            <div class="sevac-filters">
+              <div class="sevac-filters__group">
+                <label for="sevac-filtro-anio" class="sevac-filters__label">Año</label>
+                <select id="sevac-filtro-anio" class="sevac-filters__select">
+                  <option value="todos">Todos</option>
+                  <option value="2026">2026</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                </select>
               </div>
-              <h2 class="noticia-card__title">Gobierno municipal anuncia programa de mejora de caminos rurales</h2>
-              <p class="noticia-card__excerpt">
-                El H. Ayuntamiento de Arivechi presentó el programa de mejoramiento de caminos rurales que conectan
-                la cabecera municipal con las comunidades de Bámori y Tarachi, buscando mejorar la comunicación vial en el municipio.
-              </p>
-              <a href="#" class="noticia-card__link">Leer comunicado completo <span aria-hidden="true">&rarr;</span></a>
-            </div>
-          </article>
-
-          <!-- Noticia 2 -->
-          <article class="noticia-card" data-reveal>
-            <div class="noticia-card__bar"></div>
-            <div class="noticia-card__body">
-              <div class="noticia-card__meta">
-                <span class="noticia-card__date">10 de marzo de 2026</span>
-                <span class="badge badge--online">Cultura</span>
+              <div class="sevac-filters__group">
+                <label for="sevac-filtro-trimestre" class="sevac-filters__label">Trimestre</label>
+                <select id="sevac-filtro-trimestre" class="sevac-filters__select">
+                  <option value="todos">Todos</option>
+                  <option value="1">1er Trimestre</option>
+                  <option value="2">2do Trimestre</option>
+                  <option value="3">3er Trimestre</option>
+                  <option value="4">4to Trimestre</option>
+                </select>
               </div>
-              <h2 class="noticia-card__title">Invitación a las Fiestas de Santa Rosalía 2026</h2>
-              <p class="noticia-card__excerpt">
-                El gobierno municipal extiende la invitación a toda la ciudadanía a participar en las celebraciones
-                anuales en honor a Santa Rosalía, patrona de Arivechi, con actividades culturales, deportivas y religiosas.
-              </p>
-              <a href="#" class="noticia-card__link">Leer comunicado completo <span aria-hidden="true">&rarr;</span></a>
             </div>
-          </article>
 
-          <!-- Noticia 3 -->
-          <article class="noticia-card" data-reveal>
-            <div class="noticia-card__bar"></div>
-            <div class="noticia-card__body">
-              <div class="noticia-card__meta">
-                <span class="noticia-card__date">5 de marzo de 2026</span>
-                <span class="badge badge--hybrid">Tesorería</span>
-              </div>
-              <h2 class="noticia-card__title">Actualización del padrón de contribuyentes del impuesto predial</h2>
-              <p class="noticia-card__excerpt">
-                La Tesorería Municipal informa que se encuentra en proceso de actualización el padrón de contribuyentes
-                del impuesto predial. Se invita a los propietarios a verificar sus datos en las oficinas del Ayuntamiento.
-              </p>
-              <a href="#" class="noticia-card__link">Leer comunicado completo <span aria-hidden="true">&rarr;</span></a>
+            <!-- Tabla -->
+            <div class="sevac-table-wrap">
+              <table class="sevac-table" id="sevac-tabla">
+                <thead>
+                  <tr>
+                    <th scope="col">Nombre del documento</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Acción</th>
+                  </tr>
+                </thead>
+                <tbody id="sevac-tbody">
+                  <tr data-anio="2026" data-trimestre="todos" data-categoria="todos">
+                    <td class="sevac-table__doc-title">Presupuesto de Egresos 2026</td>
+                    <td><span class="sevac-table__type sevac-table__type--boletin">Boletín Oficial</span></td>
+                    <td>
+                      <button type="button" class="sevac-table__action" data-doc="Presupuesto de Egresos 2026">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr data-anio="2026" data-trimestre="todos" data-categoria="todos">
+                    <td class="sevac-table__doc-title">Ley de Ingresos y Presupuesto de Ingresos 2026</td>
+                    <td><span class="sevac-table__type sevac-table__type--boletin">Boletín Oficial</span></td>
+                    <td>
+                      <button type="button" class="sevac-table__action" data-doc="Ley de Ingresos y Presupuesto de Ingresos 2026">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr data-anio="2025" data-trimestre="4" data-categoria="gabinete">
+                    <td class="sevac-table__doc-title">Estado de Situación Financiera 2025</td>
+                    <td><span class="sevac-table__type">Informe Trimestral</span></td>
+                    <td>
+                      <button type="button" class="sevac-table__action" data-doc="Estado de Situación Financiera 2025">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr data-anio="2025" data-trimestre="4" data-categoria="gabinete">
+                    <td class="sevac-table__doc-title">Estado de Actividades 2025</td>
+                    <td><span class="sevac-table__type">Informe Trimestral</span></td>
+                    <td>
+                      <button type="button" class="sevac-table__action" data-doc="Estado de Actividades 2025">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                  <tr data-anio="2025" data-trimestre="todos" data-categoria="cabildo">
+                    <td class="sevac-table__doc-title">Cuenta Pública 2025</td>
+                    <td><span class="sevac-table__type sevac-table__type--anual">Informe Anual</span></td>
+                    <td>
+                      <button type="button" class="sevac-table__action" data-doc="Cuenta Pública 2025">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Descargar
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="sevac-empty" id="sevac-empty" hidden>No se encontraron documentos con los filtros seleccionados.</p>
             </div>
-          </article>
 
-          <!-- Noticia 4 -->
-          <article class="noticia-card" data-reveal>
-            <div class="noticia-card__bar"></div>
-            <div class="noticia-card__body">
-              <div class="noticia-card__meta">
-                <span class="noticia-card__date">28 de febrero de 2026</span>
-                <span class="badge badge--online">Salud</span>
-              </div>
-              <h2 class="noticia-card__title">Jornada de salud comunitaria en la cabecera municipal</h2>
-              <p class="noticia-card__excerpt">
-                En coordinación con la Secretaría de Salud del Estado de Sonora, se realizará una jornada de atención
-                médica gratuita para habitantes del municipio, incluyendo consultas generales y vacunación.
-              </p>
-              <a href="#" class="noticia-card__link">Leer comunicado completo <span aria-hidden="true">&rarr;</span></a>
+            <!-- Meta -->
+            <div class="sevac-meta">
+              <span class="sevac-meta__count" id="sevac-count">5 archivos</span>
+              <span>Actualizado periódicamente</span>
             </div>
-          </article>
 
-          <!-- Noticia 5 -->
-          <article class="noticia-card" data-reveal>
-            <div class="noticia-card__bar"></div>
-            <div class="noticia-card__body">
-              <div class="noticia-card__meta">
-                <span class="noticia-card__date">20 de febrero de 2026</span>
-                <span class="badge badge--presencial">Participación</span>
-              </div>
-              <h2 class="noticia-card__title">Convocatoria para comités de participación ciudadana</h2>
-              <p class="noticia-card__excerpt">
-                El Ayuntamiento convoca a la ciudadanía a integrar los comités de participación ciudadana para
-                el ejercicio 2026, con el objetivo de fortalecer la colaboración entre gobierno y sociedad.
-              </p>
-              <a href="#" class="noticia-card__link">Leer comunicado completo <span aria-hidden="true">&rarr;</span></a>
-            </div>
-          </article>
+            <p class="sevac-nota">
+              Los documentos se publican conforme a la Ley General de Contabilidad Gubernamental y los Lineamientos del CONAC.
+            </p>
 
-          <!-- Noticia 6 -->
-          <article class="noticia-card" data-reveal>
-            <div class="noticia-card__bar"></div>
-            <div class="noticia-card__body">
-              <div class="noticia-card__meta">
-                <span class="noticia-card__date">15 de febrero de 2026</span>
-                <span class="badge badge--online">Medio Ambiente</span>
-              </div>
-              <h2 class="noticia-card__title">Inicio de la temporada de reforestación en la sierra de Arivechi</h2>
-              <p class="noticia-card__excerpt">
-                Como parte del programa de conservación ambiental, el gobierno municipal invita a la comunidad a
-                sumarse a las jornadas de reforestación en zonas de la Sierra Madre Occidental dentro del municipio.
-              </p>
-              <a href="#" class="noticia-card__link">Leer comunicado completo <span aria-hidden="true">&rarr;</span></a>
-            </div>
-          </article>
-
+          </div>
         </div>
       </div>
     </section>
@@ -329,7 +348,6 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
-        <!-- Columna 1: Institucional -->
         <div class="footer__col">
           <div class="footer__brand">
             <img src="assets/images/escudo-arivechi.png" alt="Escudo de Arivechi" class="footer__escudo">
@@ -344,8 +362,6 @@
             Síguenos en Facebook
           </a>
         </div>
-
-        <!-- Columna 2: Navegación -->
         <div class="footer__col">
           <h3 class="footer__col-title">Navegación</h3>
           <a href="index.html" class="footer__link">Inicio</a>
@@ -354,8 +370,6 @@
           <a href="transparencia.html" class="footer__link">Transparencia</a>
           <a href="sevac.html" class="footer__link">SEvAC</a>
         </div>
-
-        <!-- Columna 3: Información -->
         <div class="footer__col">
           <h3 class="footer__col-title">Información</h3>
           <a href="index.html#turismo" class="footer__link">Turismo</a>
@@ -363,8 +377,6 @@
           <a href="transparencia.html#aviso-privacidad" class="footer__link">Aviso de Privacidad</a>
           <a href="#mapa-sitio" class="footer__link">Mapa del Sitio</a>
         </div>
-
-        <!-- Columna 4: Contacto -->
         <div class="footer__col">
           <h3 class="footer__col-title">Contacto</h3>
           <p class="footer__text">
@@ -373,7 +385,6 @@
           </p>
         </div>
       </div>
-
       <div class="footer__bottom">
         <p class="footer__copyright">&copy; 2026 H. Ayuntamiento de Arivechi, Sonora &middot; Todos los derechos reservados</p>
       </div>
