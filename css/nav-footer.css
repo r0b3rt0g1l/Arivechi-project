@@ -447,61 +447,6 @@
   background-color: var(--gob-primary-bg);
 }
 
-/* === LO MÁS BUSCADO === */
-.lo-mas-buscado {
-  background-color: var(--gob-bg-white);
-  border-bottom: 1px solid var(--gob-border-light);
-  padding: 0.6rem 0;
-}
-
-.lo-mas-buscado .container {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-sm);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.lo-mas-buscado .container::-webkit-scrollbar {
-  display: none;
-}
-
-.lo-mas-buscado__label {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--gob-text-muted);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.lo-mas-buscado__list {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-shrink: 0;
-}
-
-.lo-mas-buscado__link {
-  display: inline-block;
-  padding: 0.3rem 0.75rem;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: var(--gob-text-secondary);
-  background-color: var(--gob-bg);
-  border: 1px solid var(--gob-border);
-  border-radius: var(--radius-pill);
-  white-space: nowrap;
-  text-decoration: none;
-  transition: all 0.2s var(--ease);
-}
-
-.lo-mas-buscado__link:hover {
-  background-color: var(--gob-primary-bg);
-  border-color: var(--gob-primary);
-  color: var(--gob-primary);
-}
-
 /* === MAPA DEL SITIO === */
 .sitemap {
   background: var(--gob-bg);

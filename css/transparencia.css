@@ -18,6 +18,65 @@
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
+/* === BANNER: PORTAL ESTADO DE SONORA === */
+.portal-estado {
+  padding: var(--sp-lg) 0;
+  background-color: var(--gob-bg-alt);
+}
+
+.portal-estado__card {
+  background: var(--gob-bg-white);
+  border-radius: var(--radius-lg);
+  border-top: 4px solid var(--gob-primary);
+  padding: var(--sp-lg) var(--sp-md);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.portal-estado__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+  color: var(--gob-text);
+  margin-bottom: var(--sp-sm);
+}
+
+.portal-estado__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.75rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--gob-primary);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all 0.3s var(--ease);
+  box-shadow: 0 4px 14px rgba(107, 22, 41, 0.25);
+}
+
+.portal-estado__btn:hover {
+  background: var(--gob-primary-light);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(107, 22, 41, 0.35);
+}
+
+.portal-estado__btn svg {
+  flex-shrink: 0;
+}
+
+.portal-estado__text {
+  margin-top: var(--sp-sm);
+  font-size: 0.9rem;
+  color: var(--gob-text-secondary);
+  line-height: 1.6;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* === MARCO LEGAL === */
 .marco-legal {
   background-color: var(--gob-bg-white);

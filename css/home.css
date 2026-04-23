@@ -15,7 +15,7 @@
   overflow: hidden;
   padding: var(--sp-xl) 0 var(--sp-lg);
   background-color: #2a0a14;
-  background-image: url('https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?w=1920&q=80&auto=format&fit=crop');
+  background-image: url('assets/images/kiosko-letras.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -559,7 +559,10 @@
   pointer-events: none;
 }
 
-.turismo-card__image--1 { background-image: url('https://images.unsplash.com/photo-1564502230329-ec55ec8d03f8?w=1200&q=80&auto=format&fit=crop'); }
+.turismo-card__image--1 {
+  background-image: url('assets/images/kiosko-morisco.png');
+  background-position: center;
+}
 .turismo-card__image--2 { background-image: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80&auto=format&fit=crop'); }
 .turismo-card__image--3 { background-image: url('https://images.unsplash.com/photo-1520637836862-4d197d17c55a?w=1200&q=80&auto=format&fit=crop'); }
 .turismo-card__image--4 { background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&auto=format&fit=crop'); }
@@ -716,7 +719,10 @@
   box-shadow: 0 0 0 3px var(--gob-gold), var(--shadow-md);
 }
 
-.galeria-item--1 { background-image: url('https://images.unsplash.com/photo-1564502230329-ec55ec8d03f8?w=1400&q=80&auto=format&fit=crop'); }
+.galeria-item--1 {
+  background-image: url('assets/images/kiosko-morisco.png');
+  background-position: center;
+}
 .galeria-item--2 { background-image: url('https://images.unsplash.com/photo-1520637836862-4d197d17c55a?w=1200&q=80&auto=format&fit=crop'); }
 .galeria-item--3 { background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80&auto=format&fit=crop'); }
 .galeria-item--4 { background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&auto=format&fit=crop'); }
